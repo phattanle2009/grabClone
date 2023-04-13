@@ -27,6 +27,8 @@ class AppIcons {
   static String get paypal => "paypal".path;
   static String get dollar => "dollar".path;
   static String get fastForward => "fast_forward".path;
+  static String get star => "star".path;
+  static String get fire => "fire".path;
 }
 
 extension AppIconsPath on String {

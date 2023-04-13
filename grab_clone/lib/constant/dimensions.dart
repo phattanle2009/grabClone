@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppDimensions {
+  static const smallestWidthSpace = SizedBox(
+    width: 4,
+  );
+  static const smallerWidthSpace = SizedBox(
+    width: 8,
+  );
   static const smallWidthSpace = SizedBox(
     width: 12,
   );
