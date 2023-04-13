@@ -4,8 +4,6 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/home/sections/items/circular_collection_item.dart';
 
 class CollectionSection extends StatelessWidget {
-  const CollectionSection({super.key});
-
   Widget _configCollection() {
     return Container(
       color: Colors.white,
@@ -46,13 +44,31 @@ class CollectionSection extends StatelessWidget {
             AppDimensions.largeWidthSpace,
             CircularCollectionItem(
               title: "Subscription",
-              imageName: AppIcons.vegetable,
+              imageName: AppIcons.subcriptions,
               onPressed: () {},
             ),
             AppDimensions.largeWidthSpace,
             CircularCollectionItem(
               title: "Offers",
-              imageName: AppIcons.vegetable,
+              imageName: AppIcons.offer,
+              onPressed: () {},
+            ),
+            AppDimensions.largeWidthSpace,
+            CircularCollectionItem(
+              title: "Reward",
+              imageName: AppIcons.reward,
+              onPressed: () {},
+            ),
+            AppDimensions.largeWidthSpace,
+            CircularCollectionItem(
+              title: "Top UP",
+              imageName: AppIcons.topup,
+              onPressed: () {},
+            ),
+            AppDimensions.largeWidthSpace,
+            CircularCollectionItem(
+              title: "Challenges",
+              imageName: AppIcons.challenge,
               onPressed: () {},
             ),
             AppDimensions.largeWidthSpace,
