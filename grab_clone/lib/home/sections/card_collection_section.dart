@@ -13,11 +13,23 @@ class CardCollectionSection extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         scrollDirection: Axis.horizontal,
         children: [
-          CardCollectionItem(title: "Activate", subTitle: "Moca", imageName: AppIcons.paypal),
+          CardCollectionItem(
+            title: "Activate",
+            subTitle: "Moca",
+            imageName: AppIcons.paypal,
+          ),
           AppDimensions.mediumWidthSpace,
-          CardCollectionItem(title: "Account", subTitle: "Verify Email", imageName: AppIcons.userColorful),
+          CardCollectionItem(
+            title: "Account",
+            subTitle: "Verify Email",
+            imageName: AppIcons.userColorful,
+          ),
           AppDimensions.mediumWidthSpace,
-          CardCollectionItem(title: "Point", subTitle: "0", imageName: AppIcons.dollar),
+          CardCollectionItem(
+            title: "Point",
+            subTitle: "0",
+            imageName: AppIcons.dollar,
+          ),
         ],
       ),
     );
