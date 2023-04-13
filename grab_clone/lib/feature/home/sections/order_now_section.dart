@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/image.dart';
-import 'package:grab_clone/home/sections/items/oder_now_cart_item.dart';
+import 'package:grab_clone/feature/home/sections/items/oder_now_cart_item.dart';
 
 class OrderNowSection extends StatelessWidget {
   Widget _buildingSection(BuildContext context) {

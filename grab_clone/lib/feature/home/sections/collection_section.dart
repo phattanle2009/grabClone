@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
-import 'package:grab_clone/home/sections/items/circular_collection_item.dart';
+import 'package:grab_clone/feature/home/sections/items/circular_collection_item.dart';
 
 class CollectionSection extends StatelessWidget {
   Widget _configCollection() {

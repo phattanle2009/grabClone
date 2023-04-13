@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
-import 'package:grab_clone/home/sections/card_collection_section.dart';
-import 'package:grab_clone/home/sections/collection_section.dart';
-import 'package:grab_clone/home/sections/order_now_section.dart';
-import 'package:grab_clone/home/sections/suggestion_section.dart';
-import 'package:grab_clone/home/sections/text_field.dart';
+import 'package:grab_clone/feature/home/sections/card_collection_section.dart';
+import 'package:grab_clone/feature/home/sections/collection_section.dart';
+import 'package:grab_clone/feature/home/sections/order_now_section.dart';
+import 'package:grab_clone/feature/home/sections/suggestion_section.dart';
+import 'package:grab_clone/feature/home/sections/text_field.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

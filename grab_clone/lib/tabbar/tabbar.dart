@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/account/account_page.dart';
-import 'package:grab_clone/activity/activity_page.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
-import 'package:grab_clone/home/home_page.dart';
-import 'package:grab_clone/message/message_page.dart';
-import 'package:grab_clone/payment/payment_page.dart';
+import 'package:grab_clone/feature/account/account_page.dart';
+import 'package:grab_clone/feature/activity/activity_page.dart';
+import 'package:grab_clone/feature/home/home_page.dart';
+import 'package:grab_clone/feature/message/message_page.dart';
+import 'package:grab_clone/feature/payment/payment_page.dart';
 
 class DashboardNavigator extends StatefulWidget {
   const DashboardNavigator({super.key});
