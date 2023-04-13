@@ -7,8 +7,8 @@ class OrderNowSection extends StatelessWidget {
   Widget _buildingSection(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: MediaQuery.of(context).size.width * 0.8,
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      height: MediaQuery.of(context).size.width * 0.7 + 16,
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         scrollDirection: Axis.horizontal,
@@ -21,16 +21,16 @@ class OrderNowSection extends StatelessWidget {
           ),
           AppDimensions.mediumWidthSpace,
           OderNowCartItem(
-            title: "Càng đặt càng lời",
-            subTitle: "Sponsored by Japanit Matcha & Coffee House",
-            imageName: AppImages.banner1,
+            title: "Menu xịn xò chớ bỏ qua",
+            subTitle: "Sponsored by Núp Tea & Coffee - Bà Hạt",
+            imageName: AppImages.banner2,
             width: MediaQuery.of(context).size.width,
           ),
           AppDimensions.mediumWidthSpace,
           OderNowCartItem(
-            title: "Càng đặt càng lời",
-            subTitle: "Sponsored by Japanit Matcha & Coffee House",
-            imageName: AppImages.banner1,
+            title: "Thỏa sức ăn no không lo về giá",
+            subTitle: "Sponsored by Bánh mì Hà Nội chính hiệu",
+            imageName: AppImages.banner3,
             width: MediaQuery.of(context).size.width,
           ),
         ],
