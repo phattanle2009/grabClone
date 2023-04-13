@@ -29,6 +29,7 @@ class AppIcons {
   static String get fastForward => "fast_forward".path;
   static String get star => "star".path;
   static String get fire => "fire".path;
+  static String get trash => "bin".path;
 }
 
 extension AppIconsPath on String {

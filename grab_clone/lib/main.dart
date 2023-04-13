@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Colors.white),
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
       routes: {
