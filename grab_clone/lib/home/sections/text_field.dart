@@ -4,7 +4,16 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
-  const HomeTextFieldHeader({super.key});
+  Widget _animatedText() {
+    return Text(
+      "Search the Grab!",
+      style: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 16,
+        color: AppColors.lightGray,
+      ),
+    );
+  }
 
   Widget textfield() {
     return Row(
@@ -60,15 +69,9 @@ class HomeTextFieldHeader extends StatelessWidget {
                   height: 26,
                 ),
                 AppDimensions.mediumWidthSpace,
-                const Expanded(
-                    child: Text(
-                  "Search the Grab!",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    color: AppColors.lightGray,
-                  ),
-                )),
+                Expanded(
+                  child: _animatedText(),
+                ),
                 Container(
                   color: AppColors.lightGray,
                   width: 1,
