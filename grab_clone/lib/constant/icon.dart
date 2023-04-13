@@ -1,23 +1,34 @@
 class AppIcons {
-  final String _basePath = 'assets/icon/';
+  static String get activity => "activity".path;
+  static String get activityFilled => "activity_filled".path;
+  static String get bike => "bike".path;
+  static String get car => "car".path;
+  static String get messageFilled => "comment_filled".path;
+  static String get message => "comment".path;
+  static String get express => "express".path;
+  static String get food => "food".path;
+  static String get heart => "heart".path;
+  static String get history => "history".path;
+  static String get homeFilled => "home_filled".path;
+  static String get home => "home".path;
+  static String get scanner => "scanner".path;
+  static String get search => "search".path;
+  static String get userFilled => "user_filled".path;
+  static String get user => "user".path;
+  static String get vegetable => "vegetables".path;
+  static String get walletFilled => "wallet_filled".path;
+  static String get wallet => "wallet".path;
+  static String get subcriptions => "badge".path;
+  static String get offer => "money".path;
+  static String get reward => "offer".path;
+  static String get topup => "phone".path;
+  static String get challenge => "trophy".path;
+  static String get userColorful => "user_colorful".path;
+  static String get paypal => "paypal".path;
+  static String get dollar => "dollar".path;
+  static String get fastForward => "fast_forward".path;
+}
 
-  static String get activity => "${AppIcons()._basePath}activity.png";
-  static String get activityFilled => "${AppIcons()._basePath}activity_filled.png";
-  static String get bike => "${AppIcons()._basePath}bike.png";
-  static String get car => "${AppIcons()._basePath}car.png";
-  static String get messageFilled => "${AppIcons()._basePath}comment_filled.png";
-  static String get message => "${AppIcons()._basePath}comment.png";
-  static String get express => "${AppIcons()._basePath}express.png";
-  static String get food => "${AppIcons()._basePath}food.png";
-  static String get heart => "${AppIcons()._basePath}heart.png";
-  static String get history => "${AppIcons()._basePath}history.png";
-  static String get homeFilled => "${AppIcons()._basePath}home_filled.png";
-  static String get home => "${AppIcons()._basePath}home.png";
-  static String get scanner => "${AppIcons()._basePath}scanner.png";
-  static String get search => "${AppIcons()._basePath}search.png";
-  static String get userFilled => "${AppIcons()._basePath}user_filled.png";
-  static String get user => "${AppIcons()._basePath}user.png";
-  static String get vegetable => "${AppIcons()._basePath}vegetables.png";
-  static String get walletFilled => "${AppIcons()._basePath}wallet_filled.png";
-  static String get wallet => "${AppIcons()._basePath}wallet.png";
+extension AppIconsPath on String {
+  String get path => 'assets/icon/$this.png';
 }

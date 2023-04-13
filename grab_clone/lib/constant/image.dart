@@ -1,5 +1,8 @@
 class AppImages {
-  final String _basePath = 'assets/image/';
+  static String get activityEmpty => "activity_empty".path;
+  static String get banner1 => "banner1".path;
+}
 
-  static String get activityEmpty => "${AppImages()._basePath}activity_empty.png";
+extension AppImagesPath on String {
+  String get path => 'assets/image/$this.png';
 }
