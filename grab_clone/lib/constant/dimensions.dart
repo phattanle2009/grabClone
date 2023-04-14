@@ -25,4 +25,7 @@ class AppDimensions {
   static const smallerHeightSpace = SizedBox(
     height: 8,
   );
+  static const smallestHeightSpace = SizedBox(
+    height: 4,
+  );
 }

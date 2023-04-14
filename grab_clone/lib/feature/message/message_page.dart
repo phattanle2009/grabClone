@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/feature/message/notification_item.dart';
 
 class MessagePage extends StatefulWidget {
   const MessagePage({super.key});
@@ -14,16 +16,15 @@ class _MessagePageState extends State<MessagePage> {
   var isNotiSelected = true;
 
   Widget _renderList() {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    final Color oddItemColor = colorScheme.primary.withOpacity(0.05);
-    final Color evenItemColor = colorScheme.primary.withOpacity(0.15);
-
+    var list = Mock().notifications;
     return ListView.builder(
-      itemCount: 25,
+      itemCount: list.length,
       itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          tileColor: index.isOdd ? oddItemColor : evenItemColor,
-          title: Text("${isNotiSelected ? "Notifications" : "Chats"} $index"),
+        return NotificationItems(
+          title: list[index].title,
+          subtitle: list[index].subtitle,
+          datetime: list[index].datetime,
+          asRead: list[index].asRead,
         );
       },
     );
@@ -79,7 +80,7 @@ class _MessagePageState extends State<MessagePage> {
           title,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
             fontSize: 14,
             color: isSelected ? Colors.white : AppColors.darkGeen,
           ),
@@ -98,7 +99,7 @@ class _MessagePageState extends State<MessagePage> {
             elevation: 0,
             centerTitle: false,
             title: const Text(
-              'Message',
+              'Messages',
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 22,
@@ -124,7 +125,7 @@ class _MessagePageState extends State<MessagePage> {
               indicatorColor: Colors.transparent,
               dividerColor: Colors.transparent,
               isScrollable: false,
-              padding: EdgeInsets.only(bottom: 30),
+              padding: EdgeInsets.only(bottom: 34),
               tabs: <Widget>[
                 _renderButton("Chats", !isNotiSelected),
                 _renderButton("Notifications", isNotiSelected),

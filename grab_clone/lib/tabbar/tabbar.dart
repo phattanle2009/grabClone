@@ -33,19 +33,19 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
     return BottomNavigationBarItem(
       label: name,
       icon: SizedBox(
-        width: 18,
-        height: 18,
+        width: 20,
+        height: 20,
         child: Image.asset(
           iconUnselect,
           color: AppColors.lightGray,
         ),
       ),
       activeIcon: SizedBox(
-        width: 18,
-        height: 18,
+        width: 20,
+        height: 20,
         child: Image.asset(
           iconSelect,
-          color: AppColors.green,
+          color: AppColors.mediumGreen,
         ),
       ),
     );
@@ -71,7 +71,7 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
             AppIcons.wallet,
           ),
           _buildItemNavigator(
-            "Message",
+            "Messages",
             AppIcons.messageFilled,
             AppIcons.message,
           ),
@@ -87,11 +87,13 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
         unselectedItemColor: AppColors.lightGray,
         selectedItemColor: Colors.green,
         selectedLabelStyle: const TextStyle(
-          color: AppColors.green,
-          fontWeight: FontWeight.w400,
+          color: AppColors.lightGreen,
+          fontSize: 10,
+          fontWeight: FontWeight.w700,
         ),
         unselectedLabelStyle: const TextStyle(
           color: AppColors.lightGray,
+          fontSize: 10,
           fontWeight: FontWeight.w400,
         ),
         onTap: _onItemTapped,

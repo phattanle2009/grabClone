@@ -1,4 +1,5 @@
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/model/notification_model.dart';
 import 'package:grab_clone/model/suggestion_model.dart';
 
 class Mock {
@@ -65,6 +66,75 @@ class Mock {
       cost: 80000,
       hotLabel: "Bữa tối nửa giá",
       imageName: AppImages.chicken2,
+    ),
+  ];
+
+  List<NotificationModel> notifications = [
+    NotificationModel(
+      title: "😱Đừng để bảo hiểm xe hết hạn!!!",
+      subtitle: "Nhấp vào mua ngay! Bao lẹ, bao chill ~",
+      datetime: "10:39 AM",
+      asRead: true,
+    ),
+    NotificationModel(
+      title: "🛣Thêm an tâm khi di chuyển",
+      subtitle: "Bật Ride Cover - chỉ 2.000đ/chuyến",
+      datetime: "9 Apr",
+      asRead: false,
+    ),
+    NotificationModel(
+      title: "Đi chợ online sống xanh cùng Grab",
+      subtitle: "",
+      datetime: "9 Apr",
+      asRead: true,
+    ),
+    NotificationModel(
+      title: "🤱GrabMart tặng mẹ ưu đãi x5",
+      subtitle: "",
+      datetime: "8 Apr",
+      asRead: true,
+    ),
+    NotificationModel(
+      title: "Homefarm ưu đãi đến 100.000đ",
+      subtitle: "Voucher giảm đến 100.000đ",
+      datetime: "8 Apr",
+      asRead: true,
+    ),
+    NotificationModel(
+      title: "Ngồi mát đặt trái cây mát lạnh",
+      subtitle: "Giảm đến 40.000đ & free ship",
+      datetime: "8 Apr",
+      asRead: false,
+    ),
+    NotificationModel(
+      title: "Tươi rẻ mỗi ngày, GrabMart gia tăng voucher",
+      subtitle: "Giảm đến 50% + 130k",
+      datetime: "7 Apr",
+      asRead: false,
+    ),
+    NotificationModel(
+      title: "Ghé TH True Milk nhận ưu đãi",
+      subtitle: "Bồi dưỡng sữa tươi cho con bạn đến trường",
+      datetime: "7 Apr",
+      asRead: true,
+    ),
+    NotificationModel(
+      title: "😱 Đừng để bảo hiểm xe hết hạn!!!",
+      subtitle: "Nhấp vào mua ngay! Bao lẹ, bao chill ~",
+      datetime: "7 Apr",
+      asRead: false,
+    ),
+    NotificationModel(
+      title: "🛣 Thêm an tâm khi di chuyển",
+      subtitle: "Bật Ride Cover - chỉ 2.000đ/chuyến",
+      datetime: "7 Apr",
+      asRead: false,
+    ),
+    NotificationModel(
+      title: "Đi chợ online sống xanh cùng Grab",
+      subtitle: "Giảm đến 50% + 130k",
+      datetime: "6 Apr",
+      asRead: false,
     ),
   ];
 }
