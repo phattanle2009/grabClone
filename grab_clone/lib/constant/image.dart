@@ -7,6 +7,7 @@ class AppImages {
   static String get chicken1 => "chicken1".path;
   static String get chicken2 => "chicken2".path;
   static String get chicken3 => "chicken3".path;
+  static String get sky => "sky".path;
 }
 
 extension AppImagesPath on String {

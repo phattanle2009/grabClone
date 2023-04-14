@@ -16,6 +16,9 @@ class AppDimensions {
   static const largeWidthSpace = SizedBox(
     width: 24,
   );
+  static const largeHeightSpace = SizedBox(
+    height: 24,
+  );
   static const mediumHeightSpace = SizedBox(
     height: 16,
   );
