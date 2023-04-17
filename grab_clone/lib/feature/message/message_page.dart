@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/feature/message/notification_item.dart';
@@ -35,22 +36,25 @@ class _MessagePageState extends State<MessagePage> {
       child: Column(
         children: [
           const SizedBox(
-            height: 200,
+            height: 120,
           ),
           Image.asset(
-            AppImages.activityEmpty,
-            width: 180,
-            height: 180,
+            AppImages.helpCentre,
+            width: 220,
+            height: 220,
           ),
           const Text(
-            "Nothing's happening now",
+            "Find your chats with our support specialists here!",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 20,
             ),
           ),
+          AppDimensions.mediumHeightSpace,
           const Text(
-            "When you use our services, you'll see them here",
+            "You can also get help from them via our Help Center.",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w300,
               fontSize: 14,
@@ -133,6 +137,7 @@ class _MessagePageState extends State<MessagePage> {
             ),
           ),
           body: Container(
+            color: Colors.white,
             child: isNotiSelected ? _renderList() : _emptyContent(),
           )),
     );
