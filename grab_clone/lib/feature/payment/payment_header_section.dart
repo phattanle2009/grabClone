@@ -1,17 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/feature/payment/item/payment_card.dart';
 
 class PaymentHeaderSection extends StatelessWidget {
   const PaymentHeaderSection({super.key});
 
-  AppBar _config() {
-    return AppBar();
+  Widget _config(BuildContext context) {
+    return Stack(
+      children: [
+        Image.asset(AppImages.sky),
+        SafeArea(
+          minimum: EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: kToolbarHeight,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Payment',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 22,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    SizedBox.square(
+                      dimension: 20,
+                      child: Image.asset(AppIcons.setting),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 26.0),
+                child: Text(
+                  "The simplest and most rewarding\nway to pay",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              PaymentCard(),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return _config();
+    return _config(context);
   }
 }
