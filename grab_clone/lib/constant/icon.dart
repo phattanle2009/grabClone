@@ -31,6 +31,11 @@ class AppIcons {
   static String get fire => "fire".path;
   static String get trash => "bin".path;
   static String get tag => "tag".path;
+  static String get setting => "setting".path;
+  static String get walletPlus => "wallet_plus".path;
+  static String get arrowUp => "arrow_up".path;
+  static String get bank => "bank".path;
+  static String get creditCard => "credit_card".path;
 }
 
 extension AppIconsPath on String {
