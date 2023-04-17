@@ -9,6 +9,9 @@ class AppImages {
   static String get chicken3 => "chicken3".path;
   static String get sky => "sky".path;
   static String get moca => "moca".path;
+  static String get bill => "bill".path;
+  static String get key => "keys".path;
+  static String get helpCentre => "help_centre".path;
 }
 
 extension AppImagesPath on String {
