@@ -14,7 +14,7 @@ class SmallButtonItem extends StatelessWidget {
   Widget _config() {
     return Container(
       height: 38,
-      width: 100,
+      // width: 100,
       margin: EdgeInsets.all(2),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -37,13 +37,11 @@ class SmallButtonItem extends StatelessWidget {
             height: 20,
           ),
           AppDimensions.mediumWidthSpace,
-          Expanded(
-            child: Text(
-              title,
-              maxLines: 1,
-              style: TextStyle(
-                fontSize: 14,
-              ),
+          Text(
+            title,
+            maxLines: 1,
+            style: TextStyle(
+              fontSize: 14,
             ),
           ),
         ],
