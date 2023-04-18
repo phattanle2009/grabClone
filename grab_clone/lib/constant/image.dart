@@ -12,6 +12,7 @@ class AppImages {
   static String get bill => "bill".path;
   static String get key => "keys".path;
   static String get helpCentre => "help_centre".path;
+  static String get avatar => "avatar".path;
 }
 
 extension AppImagesPath on String {

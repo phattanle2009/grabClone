@@ -36,6 +36,8 @@ class AppIcons {
   static String get arrowUp => "arrow_up".path;
   static String get bank => "bank".path;
   static String get creditCard => "credit_card".path;
+  static String get rightArrow => "right_arrow".path;
+  static String get queen => "queen".path;
 }
 
 extension AppIconsPath on String {
