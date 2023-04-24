@@ -16,22 +16,31 @@ class AppDimensions {
   static const largeWidthSpace = SizedBox(
     width: 24,
   );
-  static const largestHeightSpace = SizedBox(
-    height: 48,
+  static const largerWidthSpace = SizedBox(
+    width: 36,
   );
-  static const largeHeightSpace = SizedBox(
-    height: 24,
+  static const largestWidthSpace = SizedBox(
+    width: 48,
   );
-  static const mediumHeightSpace = SizedBox(
-    height: 16,
-  );
-  static const smallHeightSpace = SizedBox(
-    height: 12,
+  static const smallestHeightSpace = SizedBox(
+    height: 4,
   );
   static const smallerHeightSpace = SizedBox(
     height: 8,
   );
-  static const smallestHeightSpace = SizedBox(
-    height: 4,
+  static const smallHeightSpace = SizedBox(
+    height: 12,
+  );
+  static const mediumHeightSpace = SizedBox(
+    height: 16,
+  );
+  static const largeHeightSpace = SizedBox(
+    height: 24,
+  );
+  static const largerHeightSpace = SizedBox(
+    height: 36,
+  );
+  static const largestHeightSpace = SizedBox(
+    height: 48,
   );
 }

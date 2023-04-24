@@ -13,4 +13,5 @@ class AppColors {
   static const lightPurple = Color(0xFF6CA5F3);
   static const lighterPurple = Color(0xFF83B5F5);
   static const lighterBlue = Color(0xFF42C0E7);
+  static const mediumPink = Color(0xFFFCDDF1);
 }
