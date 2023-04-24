@@ -14,7 +14,6 @@ class SmallButtonItem extends StatelessWidget {
   Widget _config() {
     return Container(
       height: 38,
-      // width: 100,
       margin: EdgeInsets.all(2),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(

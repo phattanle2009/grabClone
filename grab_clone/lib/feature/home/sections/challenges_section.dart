@@ -33,8 +33,8 @@ class ChallengesSection extends StatelessWidget {
           AppDimensions.smallWidthSpace,
           ChallengesItem(
             iconName: AppImages.key,
-            title: "Win Shoppee Xu 10.000 VND voucher !",
-            datetime: "Ends on 10 May 2023",
+            title: "Win 01 Bình giữ nhiệt LocknLock!",
+            datetime: "Ends on 30 May 2023",
             subtitle: "Accept this challenge",
           ),
         ],

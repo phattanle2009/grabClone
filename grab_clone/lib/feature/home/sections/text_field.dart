@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/feature/home/sections/items/fake_app_bar.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
   Widget _animatedText() {
