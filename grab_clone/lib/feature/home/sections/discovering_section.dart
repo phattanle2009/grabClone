@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/sections/items/grab_unlimited_item.dart';
 
 class DiscoveringSection extends StatelessWidget {
@@ -9,7 +9,10 @@ class DiscoveringSection extends StatelessWidget {
   Widget _sectionHeader() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+      padding: EdgeInsets.symmetric(
+        vertical: AppDimensions.mediumSize,
+        horizontal: AppDimensions.mediumSize,
+      ),
       child: Text(
         "Keep discovering",
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
@@ -17,41 +20,17 @@ class DiscoveringSection extends StatelessWidget {
     );
   }
 
-  Widget _buildBody() {
-    return Container(
-      color: Colors.white,
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            GrabUnlimitedItem(
-              title: "Freeship 15.000đ mỗi đơn GrabFood",
-              backgroundImage: AppImages.discover1,
-              subtitle: "Tìm hiểu thêm",
-            ),
-            AppDimensions.smallWidthSpace,
-            GrabUnlimitedItem(
-              title: "Đăng ký ngay chỉ 1.000đ",
-              backgroundImage: AppImages.discover2,
-              subtitle: "Giá gốc 49.000đ",
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _configCollection(BuildContext context) {
     var width = MediaQuery.of(context).size.width / 2 - 16 - 8;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimensions.mediumSize,
+      ),
       child: GridView(
         primary: false,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
+          crossAxisSpacing: AppDimensions.mediumSize,
+          mainAxisSpacing: AppDimensions.mediumSize,
           childAspectRatio: 1,
           mainAxisExtent: width + 70,
           crossAxisCount: 2,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/sections/items/oder_now_cart_item.dart';
 
 class OrderNowSection extends StatelessWidget {
@@ -8,9 +8,13 @@ class OrderNowSection extends StatelessWidget {
     return Container(
       color: Colors.white,
       height: MediaQuery.of(context).size.width * 0.7 + 16,
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(
+        vertical: AppDimensions.smallerPadding,
+      ),
       child: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.mediumSize,
+        ),
         scrollDirection: Axis.horizontal,
         children: [
           OderNowCartItem(

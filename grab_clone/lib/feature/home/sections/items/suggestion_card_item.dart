@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/extension/string_extension.dart';
 
 class SuggestionCartItem extends StatelessWidget {
@@ -62,8 +62,8 @@ class SuggestionCartItem extends StatelessWidget {
             AppDimensions.smallerWidthSpace,
             Image.asset(
               AppIcons.star,
-              width: 20,
-              height: 20,
+              width: AppDimensions.imageMediumSize,
+              height: AppDimensions.imageMediumSize,
             ),
             AppDimensions.smallestWidthSpace,
             Text(
@@ -81,19 +81,22 @@ class SuggestionCartItem extends StatelessWidget {
         cost != null
             ? Container()
             : Container(
-                padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppDimensions.smallestSize,
+                  vertical: AppDimensions.smallestSize,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.lightPink,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(10),
+                    Radius.circular(AppDimensions.smallBorder),
                   ),
                 ),
                 child: Row(
                   children: [
                     Image.asset(
                       AppIcons.fire,
-                      width: 14,
-                      height: 14,
+                      width: AppDimensions.imageSmallSize,
+                      height: AppDimensions.imageSmallSize,
                     ),
                     Text(
                       " $hotLabel ",
@@ -101,8 +104,8 @@ class SuggestionCartItem extends StatelessWidget {
                     ),
                     Image.asset(
                       AppIcons.fire,
-                      width: 14,
-                      height: 14,
+                      width: AppDimensions.imageSmallSize,
+                      height: AppDimensions.imageSmallSize,
                     ),
                   ],
                 ),

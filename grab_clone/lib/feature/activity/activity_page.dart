@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class ActivityPage extends StatefulWidget {
   const ActivityPage({super.key});
@@ -26,10 +27,10 @@ class _ActivityPageState extends State<ActivityPage> {
       actions: [
         Container(
           margin: const EdgeInsets.only(
-            top: 10,
-            right: 10,
+            top: AppDimensions.smallMargin,
+            right: AppDimensions.smallMargin,
           ),
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(AppDimensions.smallerPadding),
           decoration: const BoxDecoration(
             color: AppColors.lightBlue,
             borderRadius: BorderRadius.all(
@@ -41,10 +42,10 @@ class _ActivityPageState extends State<ActivityPage> {
               children: [
                 Image.asset(
                   AppIcons.history,
-                  width: 20,
-                  height: 20,
+                  width: AppDimensions.imageMediumSize,
+                  height: AppDimensions.imageMediumSize,
                 ),
-                const SizedBox(width: 6),
+                AppDimensions.smallerWidthSpace,
                 const Text(
                   "History",
                   style: TextStyle(
@@ -66,12 +67,12 @@ class _ActivityPageState extends State<ActivityPage> {
       child: Column(
         children: [
           const SizedBox(
-            height: 200,
+            height: AppDimensions.bannerSize,
           ),
           Image.asset(
             AppImages.activityEmpty,
-            width: 180,
-            height: 180,
+            width: AppDimensions.bannerSize,
+            height: AppDimensions.bannerSize,
           ),
           const Text(
             "Nothing's happening now",

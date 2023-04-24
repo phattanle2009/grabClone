@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/account/item/profile_item.dart';
-import 'package:grab_clone/feature/account/item/profile_section_header.dart';
 import 'package:grab_clone/feature/account/item/profile_section_label.dart';
+import 'package:grab_clone/feature/account/item/profile_section_header.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -15,7 +16,7 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   Widget _config() {
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.mediumSize),
       scrollDirection: Axis.vertical,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

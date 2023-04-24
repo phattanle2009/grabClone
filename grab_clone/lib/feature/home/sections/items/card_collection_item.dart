@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
-import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class CardCollectionItem extends StatelessWidget {
   String title;
@@ -17,11 +17,11 @@ class CardCollectionItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.5,
       child: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(AppDimensions.smallerPadding),
         decoration: const BoxDecoration(
           color: AppColors.lighterGrey,
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(AppDimensions.smallerPadding),
           ),
         ),
         child: Column(

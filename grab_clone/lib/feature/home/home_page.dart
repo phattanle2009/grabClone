@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/sections/text_field.dart';
 import 'package:grab_clone/feature/home/sections/more_section.dart';
 import 'package:grab_clone/feature/home/sections/order_now_section.dart';
@@ -22,7 +23,9 @@ class _HomePageState extends State<HomePage> {
   Widget _bottomLabel(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(vertical: 16),
+      padding: EdgeInsets.symmetric(
+        vertical: AppDimensions.mediumSize,
+      ),
       color: Colors.white,
       width: MediaQuery.of(context).size.width,
       child: Text(

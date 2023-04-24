@@ -24,22 +24,29 @@ class ChallengesItem extends StatelessWidget {
           width: 1.0,
           style: BorderStyle.solid,
         ),
-        borderRadius: BorderRadius.all(Radius.circular(4)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            AppDimensions.smallestSize,
+          ),
+        ),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.only(top: 14, left: 14),
+            padding: EdgeInsets.only(
+              top: AppDimensions.smallPadding,
+              left: AppDimensions.smallPadding,
+            ),
             child: Image.asset(
               iconName,
-              width: 36,
-              height: 36,
+              width: AppDimensions.smallAvatarSize,
+              height: AppDimensions.smallAvatarSize,
             ),
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 10, top: 14, right: 16, bottom: 10),
+              padding: EdgeInsets.all(AppDimensions.smallSize),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

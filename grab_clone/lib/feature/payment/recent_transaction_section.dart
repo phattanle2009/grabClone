@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/image.dart';
 
 class RecentTransactionSection extends StatelessWidget {
   const RecentTransactionSection({super.key});
 
   Widget _config() {
     return Container(
-      padding: EdgeInsets.only(left: 16, top: 32, bottom: 50),
+      padding: EdgeInsets.only(
+        left: AppDimensions.mediumSize,
+        top: AppDimensions.mediumSize * 2,
+        bottom: AppDimensions.customButtonHeight,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,8 +29,8 @@ class RecentTransactionSection extends StatelessWidget {
               children: [
                 Image.asset(
                   AppImages.bill,
-                  width: 70,
-                  height: 70,
+                  width: AppDimensions.bigAvatarSize,
+                  height: AppDimensions.bigAvatarSize,
                 ),
                 AppDimensions.mediumHeightSpace,
                 Text(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class MoreCollectionItem extends StatelessWidget {
   String title;
@@ -20,16 +21,18 @@ class MoreCollectionItem extends StatelessWidget {
       height: width,
       decoration: BoxDecoration(
         color: AppColors.mediumPink,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(AppDimensions.smallBorder),
+        ),
       ),
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
           Image.asset(iconName),
           Positioned(
-            top: 14,
-            left: 10,
-            right: 10,
+            top: AppDimensions.smallPadding,
+            left: AppDimensions.smallerPadding,
+            right: AppDimensions.smallerPadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,10 +44,15 @@ class MoreCollectionItem extends StatelessWidget {
                 ),
                 subtitle == null
                     ? Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppDimensions.smallerSize,
+                          vertical: AppDimensions.smallerSize,
+                        ),
                         decoration: BoxDecoration(
                           color: AppColors.red,
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(AppDimensions.mediumBorder),
+                          ),
                         ),
                         child: Text(
                           "Xem ngay",

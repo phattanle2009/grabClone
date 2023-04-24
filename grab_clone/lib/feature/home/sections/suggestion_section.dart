@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/model/suggestion_model.dart';
 import 'package:grab_clone/feature/home/sections/items/suggestion_card_item.dart';
 
@@ -16,7 +16,10 @@ class SuggestionSection extends StatelessWidget {
   Widget _sectionHeader() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimensions.mediumSize,
+        vertical: AppDimensions.mediumSize,
+      ),
       child: Row(
         children: [
           Text(
@@ -25,17 +28,19 @@ class SuggestionSection extends StatelessWidget {
           ),
           AppDimensions.smallWidthSpace,
           Container(
-            width: 20,
-            height: 20,
-            padding: EdgeInsets.symmetric(horizontal: 6),
+            width: AppDimensions.imageMediumSize,
+            height: AppDimensions.imageMediumSize,
+            padding: EdgeInsets.symmetric(
+              horizontal: AppDimensions.smallestPadding,
+            ),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.amber,
             ),
             child: Image.asset(
               AppIcons.fastForward,
-              width: 14,
-              height: 14,
+              width: AppDimensions.imageSmallSize,
+              height: AppDimensions.imageSmallSize,
             ),
           ),
         ],
@@ -49,7 +54,9 @@ class SuggestionSection extends StatelessWidget {
       color: Colors.white,
       child: ListView.separated(
         separatorBuilder: (context, index) => AppDimensions.smallWidthSpace,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.mediumSize,
+        ),
         scrollDirection: Axis.horizontal,
         itemCount: list.length,
         itemBuilder: (context, index) {

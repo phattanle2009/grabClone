@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/icon.dart';
 
 class ProfileItem extends StatelessWidget {
   String title;
@@ -39,16 +39,23 @@ class ProfileItem extends StatelessWidget {
                   ? Container()
                   : Image.asset(
                       leadingIconName!,
-                      width: 20,
-                      height: 20,
+                      width: AppDimensions.imageMediumSize,
+                      height: AppDimensions.imageMediumSize,
                     ),
               (label == null)
                   ? Container()
                   : Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppDimensions.smallerSize,
+                        vertical: AppDimensions.smallestSize,
+                      ),
                       decoration: BoxDecoration(
                         color: backgroundColorForLabel ?? Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            AppDimensions.imageMediumSize,
+                          ),
+                        ),
                       ),
                       child: Text(
                         label!,
@@ -63,8 +70,8 @@ class ProfileItem extends StatelessWidget {
               AppDimensions.smallWidthSpace,
               Image.asset(
                 AppIcons.rightArrow,
-                width: 10,
-                height: 10,
+                width: AppDimensions.imageSmallerSize,
+                height: AppDimensions.imageSmallerSize,
                 color: AppColors.lightGray,
               )
             ],

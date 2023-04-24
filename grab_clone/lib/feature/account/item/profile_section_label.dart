@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class ProfileSectionLabel extends StatelessWidget {
   String title;
@@ -9,7 +10,7 @@ class ProfileSectionLabel extends StatelessWidget {
 
   Widget _config() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 24),
+      padding: EdgeInsets.symmetric(vertical: AppDimensions.largeSize),
       child: Text(
         title,
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),

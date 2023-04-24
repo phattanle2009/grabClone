@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/payment/item/large_button_item.dart';
 import 'package:grab_clone/feature/payment/item/small_button_item.dart';
@@ -10,7 +10,7 @@ class PaymentButtonSection extends StatelessWidget {
 
   Widget _renderButtons() {
     return Container(
-      height: 50,
+      height: AppDimensions.customButtonHeight,
       child: SingleChildScrollView(
         padding: EdgeInsets.only(left: 4),
         scrollDirection: Axis.horizontal,
@@ -33,7 +33,10 @@ class PaymentButtonSection extends StatelessWidget {
 
   Widget _config() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimensions.mediumSize,
+        vertical: AppDimensions.mediumSize * 2,
+      ),
       child: Column(
         children: [
           LargeButtonItem(),
@@ -41,7 +44,9 @@ class PaymentButtonSection extends StatelessWidget {
           _renderButtons(),
           AppDimensions.mediumHeightSpace,
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppDimensions.mediumSize,
+            ),
             height: 1,
             decoration: BoxDecoration(
               color: AppColors.lighterGrey,

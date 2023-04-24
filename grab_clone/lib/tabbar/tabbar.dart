@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/feature/home/home_page.dart';
+import 'package:grab_clone/feature/payment/payment_page.dart';
+import 'package:grab_clone/feature/message/message_page.dart';
 import 'package:grab_clone/feature/account/account_page.dart';
 import 'package:grab_clone/feature/activity/activity_page.dart';
-import 'package:grab_clone/feature/home/home_page.dart';
-import 'package:grab_clone/feature/message/message_page.dart';
-import 'package:grab_clone/feature/payment/payment_page.dart';
 
 class DashboardNavigator extends StatefulWidget {
   const DashboardNavigator({super.key});
@@ -33,16 +34,16 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
     return BottomNavigationBarItem(
       label: name,
       icon: SizedBox(
-        width: 20,
-        height: 20,
+        width: AppDimensions.imageMediumSize,
+        height: AppDimensions.imageMediumSize,
         child: Image.asset(
           iconUnselect,
           color: AppColors.lightGray,
         ),
       ),
       activeIcon: SizedBox(
-        width: 20,
-        height: 20,
+        width: AppDimensions.imageMediumSize,
+        height: AppDimensions.imageMediumSize,
         child: Image.asset(
           iconSelect,
           color: AppColors.mediumGreen,

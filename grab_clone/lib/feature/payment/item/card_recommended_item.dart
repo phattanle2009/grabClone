@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class CardRecommendedItem extends StatelessWidget {
   String title;
@@ -16,7 +17,9 @@ class CardRecommendedItem extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 2 - 16 - 8,
       height: MediaQuery.of(context).size.width / 2 - 16 - 8,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(6)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(AppDimensions.smallBorder),
+        ),
         gradient: LinearGradient(
           colors: colors,
           begin: Alignment.bottomCenter,
@@ -27,7 +30,12 @@ class CardRecommendedItem extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 8, top: 8, right: 8, bottom: 16),
+              padding: EdgeInsets.only(
+                left: AppDimensions.smallerPadding,
+                top: AppDimensions.smallerPadding,
+                right: AppDimensions.smallerPadding,
+                bottom: AppDimensions.smallPadding,
+              ),
               child: Text(
                 title,
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
@@ -35,11 +43,13 @@ class CardRecommendedItem extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 8),
+            padding: EdgeInsets.only(
+              bottom: AppDimensions.smallerPadding,
+            ),
             child: Image.asset(
               imageName,
-              width: 80,
-              height: 80,
+              width: AppDimensions.avatarSize,
+              height: AppDimensions.avatarSize,
             ),
           ),
         ],

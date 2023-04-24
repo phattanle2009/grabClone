@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/sections/items/more_collection_item.dart';
 
 class HomeMoreSection extends StatelessWidget {
@@ -9,7 +9,10 @@ class HomeMoreSection extends StatelessWidget {
   Widget _sectionHeader() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+      padding: EdgeInsets.symmetric(
+        vertical: AppDimensions.mediumSize,
+        horizontal: AppDimensions.mediumSize,
+      ),
       child: Text(
         "Do more with Grab",
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
@@ -21,7 +24,9 @@ class HomeMoreSection extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.mediumSize,
+        ),
         scrollDirection: Axis.horizontal,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

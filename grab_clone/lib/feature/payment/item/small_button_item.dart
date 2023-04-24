@@ -13,17 +13,19 @@ class SmallButtonItem extends StatelessWidget {
 
   Widget _config() {
     return Container(
-      height: 38,
+      height: AppDimensions.smallAvatarSize,
       margin: EdgeInsets.all(2),
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(AppDimensions.smallerPadding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(AppDimensions.smallerBorder),
+        ),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
             spreadRadius: 1,
-            blurRadius: 6,
+            blurRadius: AppDimensions.smallerSize,
           ),
         ],
       ),
@@ -32,8 +34,8 @@ class SmallButtonItem extends StatelessWidget {
           Image.asset(
             imageName,
             color: AppColors.darkGeen,
-            width: 20,
-            height: 20,
+            width: AppDimensions.imageMediumSize,
+            height: AppDimensions.imageMediumSize,
           ),
           AppDimensions.mediumWidthSpace,
           Text(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/icon.dart';
-import 'package:grab_clone/feature/home/sections/items/fake_app_bar.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
   Widget _animatedText() {
@@ -10,7 +9,7 @@ class HomeTextFieldHeader extends StatelessWidget {
       "Search the Grab!",
       style: TextStyle(
         fontWeight: FontWeight.w400,
-        fontSize: 16,
+        fontSize: AppDimensions.mediumSize,
         color: AppColors.lightGray,
       ),
     );
@@ -20,44 +19,42 @@ class HomeTextFieldHeader extends StatelessWidget {
     return Row(
       children: [
         SizedBox.square(
-          dimension: 60,
+          dimension: AppDimensions.bigSize,
           child: Container(
             alignment: Alignment.center,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(AppDimensions.smallBorder),
               ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black12,
                   spreadRadius: 1,
-                  blurRadius: 15,
+                  blurRadius: AppDimensions.mediumSize,
                 ),
               ],
             ),
             child: Image.asset(
               AppIcons.scanner,
-              width: 26,
-              height: 26,
+              width: AppDimensions.imageLargeSize,
+              height: AppDimensions.imageLargeSize,
             ),
           ),
         ),
-        const SizedBox(
-          width: 8,
-        ),
+        AppDimensions.smallerWidthSpace,
         Expanded(
           child: Container(
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(AppDimensions.smallBorder),
               ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black12,
                   spreadRadius: 1,
-                  blurRadius: 15,
+                  blurRadius: AppDimensions.mediumSize,
                 ),
               ],
             ),
@@ -66,8 +63,8 @@ class HomeTextFieldHeader extends StatelessWidget {
                 AppDimensions.mediumWidthSpace,
                 Image.asset(
                   AppIcons.search,
-                  width: 26,
-                  height: 26,
+                  width: AppDimensions.imageLargeSize,
+                  height: AppDimensions.imageLargeSize,
                 ),
                 AppDimensions.mediumWidthSpace,
                 Expanded(
@@ -76,13 +73,13 @@ class HomeTextFieldHeader extends StatelessWidget {
                 Container(
                   color: AppColors.lightGray,
                   width: 1,
-                  height: 60,
+                  height: AppDimensions.bigSize,
                 ),
                 AppDimensions.mediumWidthSpace,
                 Image.asset(
                   AppIcons.heart,
-                  width: 26,
-                  height: 26,
+                  width: AppDimensions.imageLargeSize,
+                  height: AppDimensions.imageLargeSize,
                 ),
                 AppDimensions.mediumWidthSpace,
               ],
@@ -98,13 +95,16 @@ class HomeTextFieldHeader extends StatelessWidget {
     return Stack(
       children: [
         Positioned.fill(
-          top: 45,
+          top: AppDimensions.largestSize,
           child: Container(
             color: Colors.white,
           ),
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppDimensions.mediumSize,
+            vertical: AppDimensions.mediumSize,
+          ),
           child: textfield(),
         ),
       ],

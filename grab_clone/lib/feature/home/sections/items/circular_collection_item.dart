@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class CircularCollectionItem extends StatelessWidget {
   String title;
@@ -21,8 +22,8 @@ class CircularCollectionItem extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Container(
-                height: 48,
-                width: 48,
+                height: AppDimensions.largestSize,
+                width: AppDimensions.largestSize,
                 decoration: const BoxDecoration(
                   color: AppColors.lightGreen,
                   shape: BoxShape.circle,
@@ -36,9 +37,7 @@ class CircularCollectionItem extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 8,
-          ),
+          AppDimensions.smallerWidthSpace,
           SizedBox.fromSize(
             size: Size(60, 18),
             child: Text(title, textAlign: TextAlign.center, overflow: TextOverflow.ellipsis),

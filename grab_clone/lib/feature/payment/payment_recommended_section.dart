@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/feature/payment/item/card_recommended_item.dart';
 
 class PaymentRecommendedSection extends StatelessWidget {
@@ -9,7 +9,9 @@ class PaymentRecommendedSection extends StatelessWidget {
 
   Widget _config(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimensions.mediumSize,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -23,7 +25,9 @@ class PaymentRecommendedSection extends StatelessWidget {
           AppDimensions.largeHeightSpace,
           Container(
             child: SingleChildScrollView(
-              padding: EdgeInsets.only(left: 4),
+              padding: EdgeInsets.only(
+                left: AppDimensions.smallestSize,
+              ),
               scrollDirection: Axis.horizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

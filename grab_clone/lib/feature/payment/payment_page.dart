@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/feature/payment/payment_button_section.dart';
 import 'package:grab_clone/feature/payment/payment_header_section.dart';
-import 'package:grab_clone/feature/payment/payment_recommended_section.dart';
 import 'package:grab_clone/feature/payment/recent_transaction_section.dart';
+import 'package:grab_clone/feature/payment/payment_recommended_section.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});

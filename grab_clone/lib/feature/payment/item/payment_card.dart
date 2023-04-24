@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 
 class PaymentCard extends StatelessWidget {
   const PaymentCard({super.key});
 
   Widget _config() {
     return Container(
-      height: 180,
+      height: AppDimensions.bannerSize,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
-          Radius.circular(14),
+          Radius.circular(AppDimensions.smallPadding),
         ),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
             spreadRadius: 1,
-            blurRadius: 15,
+            blurRadius: AppDimensions.mediumSize,
           ),
         ],
       ),
@@ -29,7 +30,10 @@ class PaymentCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(left: 16, top: 24),
+                    padding: EdgeInsets.only(
+                      left: AppDimensions.mediumSize,
+                      top: AppDimensions.largeSize,
+                    ),
                     child: Text(
                       "Activate your Moca\nWallet to enjoy\ncashless payments",
                       style: TextStyle(
@@ -41,7 +45,7 @@ class PaymentCard extends StatelessWidget {
                 ),
                 GestureDetector(
                   child: Container(
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.all(AppDimensions.mediumSize),
                     child: Text(
                       "Activate Now",
                       style: TextStyle(
@@ -56,10 +60,10 @@ class PaymentCard extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(right: 8),
+            padding: EdgeInsets.only(right: AppDimensions.smallerSize),
             child: Image.asset(
               AppImages.moca,
-              height: 150,
+              height: AppDimensions.bannerSize,
             ),
           ),
         ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/sections/items/challenges_item.dart';
 
 class ChallengesSection extends StatelessWidget {
@@ -8,7 +8,10 @@ class ChallengesSection extends StatelessWidget {
 
   Widget _sectionHeader() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimensions.mediumSize,
+        vertical: AppDimensions.mediumSize,
+      ),
       child: Text(
         "Get rewarded with Challenges",
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
@@ -18,10 +21,14 @@ class ChallengesSection extends StatelessWidget {
 
   Widget _buildBody() {
     return Container(
-      height: 120,
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      height: AppDimensions.bigerSize,
+      padding: const EdgeInsets.symmetric(
+        vertical: AppDimensions.mediumSize,
+      ),
       child: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.mediumSize,
+        ),
         scrollDirection: Axis.horizontal,
         children: [
           ChallengesItem(

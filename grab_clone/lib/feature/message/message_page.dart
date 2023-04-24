@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
-import 'package:grab_clone/constant/colors.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/message/notification_item.dart';
 
 class MessagePage extends StatefulWidget {
@@ -36,12 +36,12 @@ class _MessagePageState extends State<MessagePage> {
       child: Column(
         children: [
           const SizedBox(
-            height: 120,
+            height: AppDimensions.bigerSize,
           ),
           Image.asset(
             AppImages.helpCentre,
-            width: 220,
-            height: 220,
+            width: AppDimensions.bigestSize,
+            height: AppDimensions.bigestSize,
           ),
           const Text(
             "Find your chats with our support specialists here!",
@@ -77,9 +77,14 @@ class _MessagePageState extends State<MessagePage> {
         width: MediaQuery.of(context).size.width / 2,
         decoration: BoxDecoration(
           color: isSelected ? AppColors.darkGeen : AppColors.lightBlue,
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(AppDimensions.mediumBorder),
+          ),
         ),
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: EdgeInsets.symmetric(
+          vertical: AppDimensions.smallerPadding,
+          horizontal: AppDimensions.largePadding,
+        ),
         child: Text(
           title,
           textAlign: TextAlign.center,
@@ -98,48 +103,51 @@ class _MessagePageState extends State<MessagePage> {
       initialIndex: 1,
       length: 2,
       child: Scaffold(
-          appBar: AppBar(
-            toolbarHeight: 80,
-            elevation: 0,
-            centerTitle: false,
-            title: const Text(
-              'Messages',
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 22,
-                color: Colors.black,
-              ),
-            ),
-            notificationPredicate: (ScrollNotification notification) {
-              return notification.depth == 1;
-            },
-            actions: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                child: GestureDetector(
-                  child: Image.asset(
-                    AppIcons.trash,
-                    width: 20,
-                    height: 20,
-                  ),
-                ),
-              ),
-            ],
-            bottom: TabBar(
-              indicatorColor: Colors.transparent,
-              dividerColor: Colors.transparent,
-              isScrollable: false,
-              padding: EdgeInsets.only(bottom: 34),
-              tabs: <Widget>[
-                _renderButton("Chats", !isNotiSelected),
-                _renderButton("Notifications", isNotiSelected),
-              ],
+        appBar: AppBar(
+          toolbarHeight: AppDimensions.toolBarHeight,
+          elevation: 0,
+          centerTitle: false,
+          title: const Text(
+            'Messages',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 22,
+              color: Colors.black,
             ),
           ),
-          body: Container(
-            color: Colors.white,
-            child: isNotiSelected ? _renderList() : _emptyContent(),
-          )),
+          notificationPredicate: (ScrollNotification notification) {
+            return notification.depth == 1;
+          },
+          actions: [
+            Container(
+              padding: const EdgeInsets.all(
+                AppDimensions.smallerPadding,
+              ),
+              child: GestureDetector(
+                child: Image.asset(
+                  AppIcons.trash,
+                  width: AppDimensions.imageMediumSize,
+                  height: AppDimensions.imageMediumSize,
+                ),
+              ),
+            ),
+          ],
+          bottom: TabBar(
+            indicatorColor: Colors.transparent,
+            dividerColor: Colors.transparent,
+            isScrollable: false,
+            padding: EdgeInsets.only(bottom: AppDimensions.largerPadding),
+            tabs: <Widget>[
+              _renderButton("Chats", !isNotiSelected),
+              _renderButton("Notifications", isNotiSelected),
+            ],
+          ),
+        ),
+        body: Container(
+          color: Colors.white,
+          child: isNotiSelected ? _renderList() : _emptyContent(),
+        ),
+      ),
     );
   }
 

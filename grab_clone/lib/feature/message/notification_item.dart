@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/icon.dart';
 
 class NotificationItems extends StatelessWidget {
   String title;
@@ -19,13 +19,18 @@ class NotificationItems extends StatelessWidget {
   Widget _configItem() {
     return Container(
       color: asRead ? Colors.white : AppColors.lightBlue,
-      padding: EdgeInsets.only(top: 0, bottom: 28, left: 16, right: 16),
+      padding: EdgeInsets.only(
+        top: 0,
+        bottom: AppDimensions.largerPadding,
+        left: AppDimensions.mediumSize,
+        right: AppDimensions.mediumSize,
+      ),
       child: Row(
         children: [
           SizedBox.square(
-            dimension: 48,
+            dimension: AppDimensions.largestSize,
             child: Container(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(AppDimensions.smallPadding),
               decoration: BoxDecoration(
                 color: AppColors.lightPink,
                 shape: BoxShape.circle,
@@ -47,7 +52,10 @@ class NotificationItems extends StatelessWidget {
                         title,
                         maxLines: 1,
                         overflow: TextOverflow.visible,
-                        style: TextStyle(fontWeight: asRead ? FontWeight.normal : FontWeight.bold, fontSize: 16),
+                        style: TextStyle(
+                          fontWeight: asRead ? FontWeight.normal : FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                     AppDimensions.smallestWidthSpace,

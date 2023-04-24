@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/payment/item/payment_card.dart';
 
 class PaymentHeaderSection extends StatelessWidget {
@@ -11,7 +12,9 @@ class PaymentHeaderSection extends StatelessWidget {
       children: [
         Image.asset(AppImages.sky),
         SafeArea(
-          minimum: EdgeInsets.symmetric(horizontal: 16.0),
+          minimum: EdgeInsets.symmetric(
+            horizontal: AppDimensions.mediumSize,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -30,14 +33,16 @@ class PaymentHeaderSection extends StatelessWidget {
                       ),
                     ),
                     SizedBox.square(
-                      dimension: 20,
+                      dimension: AppDimensions.imageMediumSize,
                       child: Image.asset(AppIcons.setting),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 26.0),
+                padding: EdgeInsets.symmetric(
+                  vertical: AppDimensions.imageLargeSize,
+                ),
                 child: Text(
                   "The simplest and most rewarding\nway to pay",
                   style: TextStyle(

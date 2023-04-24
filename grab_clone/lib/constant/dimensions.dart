@@ -1,46 +1,95 @@
 import 'package:flutter/material.dart';
 
 class AppDimensions {
+  static const smallestSize = 4.0;
+  static const smallerSize = 8.0;
+  static const smallSize = 12.0;
+  static const mediumSize = 16.0;
+  static const largeSize = 24.0;
+  static const largerSize = 36.0;
+  static const largestSize = 48.0;
+  static const bigSize = 60.0;
+  static const bigerSize = 120.0;
+  static const bigestSize = 220.0;
+
+  // Icon/Image/Banner
+  static const imageSmallerSize = 10.0;
+  static const imageSmallSize = 14.0;
+  static const imageMediumSize = 20.0;
+  static const imageLargeSize = 26.0;
+  static const smallAvatarSize = 36.0;
+  static const bigAvatarSize = 70.0;
+  static const avatarSize = 80.0;
+  static const bannerSize = 180.0;
+
+  // Font size
+  static const fontSize = 14.0;
+
+  // Margin
+  static const smallMargin = 10.0;
+
+  // Padding
+  static const smallestPadding = 6.0;
+  static const smallerPadding = 10.0;
+  static const smallPadding = 14.0;
+  static const largePadding = 20.0;
+  static const largerPadding = 28.0;
+  static const largestPadding = 34.0;
+
+  // Border radius
+  static const smallerBorder = 6.0;
+  static const smallBorder = 10.0;
+  static const mediumBorder = 20.0;
+
+  // Tool bar height
+  static const toolBarHeight = 80.0;
+
+  // Button height
+  static const customButtonHeight = 50.0;
+
   static const smallestWidthSpace = SizedBox(
-    width: 4,
+    width: smallestSize,
   );
   static const smallerWidthSpace = SizedBox(
-    width: 8,
+    width: smallerSize,
   );
   static const smallWidthSpace = SizedBox(
-    width: 12,
+    width: smallSize,
   );
   static const mediumWidthSpace = SizedBox(
-    width: 16,
+    width: mediumSize,
   );
   static const largeWidthSpace = SizedBox(
-    width: 24,
+    width: largeSize,
   );
   static const largerWidthSpace = SizedBox(
-    width: 36,
+    width: largerSize,
   );
   static const largestWidthSpace = SizedBox(
-    width: 48,
+    width: largestSize,
   );
   static const smallestHeightSpace = SizedBox(
-    height: 4,
+    height: smallestSize,
   );
   static const smallerHeightSpace = SizedBox(
-    height: 8,
+    height: smallerSize,
   );
   static const smallHeightSpace = SizedBox(
-    height: 12,
+    height: smallSize,
   );
   static const mediumHeightSpace = SizedBox(
-    height: 16,
+    height: mediumSize,
   );
   static const largeHeightSpace = SizedBox(
-    height: 24,
+    height: largeSize,
   );
   static const largerHeightSpace = SizedBox(
-    height: 36,
+    height: largerSize,
   );
   static const largestHeightSpace = SizedBox(
-    height: 48,
+    height: largestSize,
+  );
+  static const biggestHeightSpace = SizedBox(
+    height: largestSize,
   );
 }

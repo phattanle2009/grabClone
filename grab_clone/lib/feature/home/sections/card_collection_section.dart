@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/sections/items/card_collection_item.dart';
 
 class CardCollectionSection extends StatelessWidget {
@@ -8,9 +8,13 @@ class CardCollectionSection extends StatelessWidget {
     return Container(
       height: 92,
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(
+        vertical: AppDimensions.mediumSize,
+      ),
       child: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.mediumSize,
+        ),
         scrollDirection: Axis.horizontal,
         children: [
           CardCollectionItem(

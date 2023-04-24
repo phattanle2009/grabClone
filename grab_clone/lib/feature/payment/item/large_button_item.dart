@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/icon.dart';
 
 class LargeButtonItem extends StatelessWidget {
   const LargeButtonItem({super.key});
 
   Widget _config() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+      padding: EdgeInsets.all(AppDimensions.mediumSize),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(AppDimensions.smallBorder),
+        ),
         color: AppColors.mediumGreen,
       ),
       child: Row(
         children: [
           SizedBox.square(
-            dimension: 24,
+            dimension: AppDimensions.largeSize,
             child: Image.asset(
               AppIcons.wallet,
               color: Colors.white,

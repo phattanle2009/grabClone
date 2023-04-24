@@ -19,7 +19,9 @@ class GrabUnlimitedItem extends StatelessWidget {
       width: width,
       height: width + 60,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(AppDimensions.smallBorder),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

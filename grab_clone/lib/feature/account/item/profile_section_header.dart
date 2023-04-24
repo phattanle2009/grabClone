@@ -9,15 +9,18 @@ class ProfileSectionHeader extends StatelessWidget {
 
   Widget _config() {
     return Padding(
-      padding: EdgeInsets.only(top: 16, bottom: 30),
+      padding: EdgeInsets.only(
+        top: AppDimensions.mediumSize,
+        bottom: AppDimensions.largeSize,
+      ),
       child: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(40),
+            borderRadius: BorderRadius.circular(AppDimensions.avatarSize / 2),
             child: Image.asset(
               AppImages.avatar,
-              width: 80,
-              height: 80,
+              width: AppDimensions.avatarSize,
+              height: AppDimensions.avatarSize,
             ),
           ),
           AppDimensions.mediumWidthSpace,
@@ -42,7 +45,7 @@ class ProfileSectionHeader extends StatelessWidget {
                     AppDimensions.smallerWidthSpace,
                     Image.asset(
                       AppIcons.rightArrow,
-                      width: 12,
+                      width: AppDimensions.smallSize,
                       color: AppColors.lightGray,
                     ),
                   ],
