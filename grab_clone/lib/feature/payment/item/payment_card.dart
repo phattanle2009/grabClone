@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
@@ -36,10 +37,7 @@ class PaymentCard extends StatelessWidget {
                     ),
                     child: Text(
                       "Activate your Moca\nWallet to enjoy\ncashless payments",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style: AppTextStyles.bigBoldFont,
                     ),
                   ),
                 ),
@@ -49,9 +47,9 @@ class PaymentCard extends StatelessWidget {
                     child: Text(
                       "Activate Now",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
                         color: Colors.blue,
+                        fontSize: AppDimensions.mediumFontSize,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),

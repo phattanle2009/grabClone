@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class GrabUnlimitedItem extends StatelessWidget {
   String title;
@@ -39,14 +40,14 @@ class GrabUnlimitedItem extends StatelessWidget {
           Text(
             title,
             maxLines: 2,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
+            style: AppTextStyles.smallMediumFont,
           ),
           Text(
             subtitle,
-            style: TextStyle(fontSize: 10, color: AppColors.lightGray),
+            style: TextStyle(
+              fontSize: AppDimensions.smallestFontSize,
+              color: AppColors.lightGray,
+            ),
           ),
         ],
       ),

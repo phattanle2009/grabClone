@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class NotificationItems extends StatelessWidget {
   String title;
@@ -54,14 +55,17 @@ class NotificationItems extends StatelessWidget {
                         overflow: TextOverflow.visible,
                         style: TextStyle(
                           fontWeight: asRead ? FontWeight.normal : FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: AppDimensions.mediumFontSize,
                         ),
                       ),
                     ),
                     AppDimensions.smallestWidthSpace,
                     Text(
                       datetime,
-                      style: TextStyle(fontWeight: asRead ? FontWeight.normal : FontWeight.bold, fontSize: 12),
+                      style: TextStyle(
+                        fontWeight: asRead ? FontWeight.normal : FontWeight.bold,
+                        fontSize: AppDimensions.smallerFontSize,
+                      ),
                     ),
                   ],
                 ),
@@ -70,7 +74,7 @@ class NotificationItems extends StatelessWidget {
                   subtitle,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+                  style: AppTextStyles.smallMediumFont,
                 ),
               ],
             ),

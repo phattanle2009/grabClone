@@ -23,7 +23,12 @@ class AppDimensions {
   static const bannerSize = 180.0;
 
   // Font size
-  static const fontSize = 14.0;
+  static const smallestFontSize = 10.0;
+  static const smallerFontSize = 12.0;
+  static const smallFontSize = 14.0;
+  static const mediumFontSize = 16.0;
+  static const bigFontSize = 18.0;
+  static const biggerFontSize = 22.0;
 
   // Margin
   static const smallMargin = 10.0;

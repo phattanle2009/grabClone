@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
@@ -46,19 +47,13 @@ class _MessagePageState extends State<MessagePage> {
           const Text(
             "Find your chats with our support specialists here!",
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+            style: AppTextStyles.biggerBoldFont,
           ),
           AppDimensions.mediumHeightSpace,
           const Text(
             "You can also get help from them via our Help Center.",
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 14,
-            ),
+            style: AppTextStyles.smallMediumFont,
           ),
         ],
       ),
@@ -90,7 +85,7 @@ class _MessagePageState extends State<MessagePage> {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 14,
+            fontSize: AppDimensions.smallFontSize,
             color: isSelected ? Colors.white : AppColors.darkGeen,
           ),
         ),
@@ -109,11 +104,7 @@ class _MessagePageState extends State<MessagePage> {
           centerTitle: false,
           title: const Text(
             'Messages',
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 22,
-              color: Colors.black,
-            ),
+            style: AppTextStyles.biggestBoldFont,
           ),
           notificationPredicate: (ScrollNotification notification) {
             return notification.depth == 1;

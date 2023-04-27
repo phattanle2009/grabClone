@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class ChallengesItem extends StatelessWidget {
   String iconName;
@@ -54,17 +55,21 @@ class ChallengesItem extends StatelessWidget {
                     title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                    style: AppTextStyles.smallBoldFont,
                   ),
                   AppDimensions.smallestHeightSpace,
                   Text(
                     datetime,
-                    style: TextStyle(fontWeight: FontWeight.normal, fontSize: 12),
+                    style: AppTextStyles.smallerMediumFont,
                   ),
                   AppDimensions.smallestHeightSpace,
                   Text(
                     subtitle,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.blue),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: AppDimensions.smallerFontSize,
+                      color: Colors.blue,
+                    ),
                   ),
                 ],
               ),

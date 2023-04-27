@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/extension/build_context_extension.dart';
+import 'package:grab_clone/feature/home/view/favourite/favourite_page.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
+  void _openFavouritePage(BuildContext context) async {
+    context.push(FavouritePage());
+  }
+
   Widget _animatedText() {
     return Text(
       "Search the Grab!",
@@ -15,7 +21,7 @@ class HomeTextFieldHeader extends StatelessWidget {
     );
   }
 
-  Widget textfield() {
+  Widget textfield(BuildContext context) {
     return Row(
       children: [
         SizedBox.square(
@@ -76,10 +82,15 @@ class HomeTextFieldHeader extends StatelessWidget {
                   height: AppDimensions.bigSize,
                 ),
                 AppDimensions.mediumWidthSpace,
-                Image.asset(
-                  AppIcons.heart,
-                  width: AppDimensions.imageLargeSize,
-                  height: AppDimensions.imageLargeSize,
+                InkWell(
+                  onTap: () {
+                    _openFavouritePage(context);
+                  },
+                  child: Image.asset(
+                    AppIcons.heart,
+                    width: AppDimensions.imageLargeSize,
+                    height: AppDimensions.imageLargeSize,
+                  ),
                 ),
                 AppDimensions.mediumWidthSpace,
               ],
@@ -105,7 +116,7 @@ class HomeTextFieldHeader extends StatelessWidget {
             horizontal: AppDimensions.mediumSize,
             vertical: AppDimensions.mediumSize,
           ),
-          child: textfield(),
+          child: textfield(context),
         ),
       ],
     );

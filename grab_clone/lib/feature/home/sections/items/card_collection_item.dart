@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class CardCollectionItem extends StatelessWidget {
   String title;
@@ -32,7 +33,7 @@ class CardCollectionItem extends StatelessWidget {
                 title,
                 textAlign: TextAlign.left,
                 maxLines: 1,
-                style: const TextStyle(fontWeight: FontWeight.w300),
+                style: AppTextStyles.smallerMediumFont,
               ),
             ),
             Expanded(
@@ -41,7 +42,7 @@ class CardCollectionItem extends StatelessWidget {
                   Expanded(
                     child: Text(
                       subTitle,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: AppTextStyles.smallBoldFont,
                     ),
                   ),
                   Image.asset(

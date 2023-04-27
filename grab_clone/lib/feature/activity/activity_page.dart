@@ -3,6 +3,7 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class ActivityPage extends StatefulWidget {
   const ActivityPage({super.key});
@@ -17,11 +18,7 @@ class _ActivityPageState extends State<ActivityPage> {
       elevation: 0,
       title: const Text(
         "Activity",
-        style: TextStyle(
-          fontWeight: FontWeight.w700,
-          fontSize: 22,
-          color: Colors.black,
-        ),
+        style: AppTextStyles.biggestBoldFont,
       ),
       centerTitle: false,
       actions: [
@@ -48,11 +45,7 @@ class _ActivityPageState extends State<ActivityPage> {
                 AppDimensions.smallerWidthSpace,
                 const Text(
                   "History",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                  ),
+                  style: AppTextStyles.bigBoldFont,
                 ),
               ],
             ),
@@ -76,17 +69,11 @@ class _ActivityPageState extends State<ActivityPage> {
           ),
           const Text(
             "Nothing's happening now",
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+            style: AppTextStyles.biggerBoldFont,
           ),
           const Text(
             "When you use our services, you'll see them here",
-            style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 14,
-            ),
+            style: AppTextStyles.smallMediumFont,
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/payment/item/payment_card.dart';
 
 class PaymentHeaderSection extends StatelessWidget {
@@ -25,11 +26,7 @@ class PaymentHeaderSection extends StatelessWidget {
                     Expanded(
                       child: Text(
                         'Payment',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 22,
-                          color: Colors.black,
-                        ),
+                        style: AppTextStyles.biggestBoldFont,
                       ),
                     ),
                     SizedBox.square(
@@ -45,11 +42,7 @@ class PaymentHeaderSection extends StatelessWidget {
                 ),
                 child: Text(
                   "The simplest and most rewarding\nway to pay",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    color: Colors.black,
-                  ),
+                  style: AppTextStyles.smallMediumFont,
                 ),
               ),
               PaymentCard(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/model/suggestion_model.dart';
 import 'package:grab_clone/feature/home/sections/items/suggestion_card_item.dart';
 
@@ -24,7 +25,7 @@ class SuggestionSection extends StatelessWidget {
         children: [
           Text(
             sectionHeader,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+            style: AppTextStyles.biggerBoldFont,
           ),
           AppDimensions.smallWidthSpace,
           Container(

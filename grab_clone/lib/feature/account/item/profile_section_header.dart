@@ -3,6 +3,7 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class ProfileSectionHeader extends StatelessWidget {
   const ProfileSectionHeader({super.key});
@@ -30,7 +31,7 @@ class ProfileSectionHeader extends StatelessWidget {
               children: [
                 Text(
                   "Lê Tấn Phát",
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  style: AppTextStyles.biggestBoldFont,
                 ),
                 AppDimensions.smallerHeightSpace,
                 Row(
@@ -38,7 +39,7 @@ class ProfileSectionHeader extends StatelessWidget {
                     Text(
                       "Edit Profile",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: AppDimensions.smallFontSize,
                         color: AppColors.lightGray,
                       ),
                     ),

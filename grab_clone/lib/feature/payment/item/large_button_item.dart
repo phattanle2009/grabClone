@@ -32,15 +32,15 @@ class LargeButtonItem extends StatelessWidget {
                 Text(
                   "Add a card",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
                     color: Colors.white,
+                    fontSize: AppDimensions.smallFontSize,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   "Go cashless with a credit or debit card",
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: AppDimensions.smallerFontSize,
                     color: Colors.white,
                   ),
                 ),

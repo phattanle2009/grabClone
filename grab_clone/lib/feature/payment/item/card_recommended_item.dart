@@ -38,7 +38,11 @@ class CardRecommendedItem extends StatelessWidget {
               ),
               child: Text(
                 title,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(
+                  fontSize: AppDimensions.smallFontSize,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/extension/string_extension.dart';
 
 class SuggestionCartItem extends StatelessWidget {
@@ -28,7 +29,9 @@ class SuggestionCartItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(
+            AppDimensions.smallestSize,
+          ),
           child: Image.asset(
             imageName,
             width: width * 0.4,
@@ -39,7 +42,7 @@ class SuggestionCartItem extends StatelessWidget {
         AppDimensions.smallerHeightSpace,
         Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16.0),
+          style: AppTextStyles.bigMediumFont,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -47,7 +50,7 @@ class SuggestionCartItem extends StatelessWidget {
           children: [
             Text(
               "$distance km",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12.0),
+              style: AppTextStyles.smallerMediumFont,
             ),
             AppDimensions.smallerWidthSpace,
             Container(
@@ -68,7 +71,7 @@ class SuggestionCartItem extends StatelessWidget {
             AppDimensions.smallestWidthSpace,
             Text(
               "$rating",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12.0),
+              style: AppTextStyles.smallerMediumFont,
             ),
           ],
         ),
@@ -76,7 +79,7 @@ class SuggestionCartItem extends StatelessWidget {
             ? Container()
             : Text(
                 "$cost".getConcurrency(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0),
+                style: AppTextStyles.smallerBoldFont,
               ),
         cost != null
             ? Container()
@@ -100,7 +103,7 @@ class SuggestionCartItem extends StatelessWidget {
                     ),
                     Text(
                       " $hotLabel ",
-                      style: TextStyle(fontWeight: FontWeight.w300, fontSize: 10.0),
+                      style: AppTextStyles.smallestMediumFont,
                     ),
                     Image.asset(
                       AppIcons.fire,

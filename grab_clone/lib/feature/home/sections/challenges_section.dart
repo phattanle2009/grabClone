@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/home/sections/items/challenges_item.dart';
 
 class ChallengesSection extends StatelessWidget {
@@ -14,7 +15,7 @@ class ChallengesSection extends StatelessWidget {
       ),
       child: Text(
         "Get rewarded with Challenges",
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+        style: AppTextStyles.biggerBoldFont,
       ),
     );
   }

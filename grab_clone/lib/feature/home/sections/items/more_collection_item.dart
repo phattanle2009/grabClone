@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class MoreCollectionItem extends StatelessWidget {
   String title;
@@ -40,7 +41,7 @@ class MoreCollectionItem extends StatelessWidget {
                   title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                  style: AppTextStyles.smallBoldFont,
                 ),
                 subtitle == null
                     ? Container(
@@ -58,7 +59,7 @@ class MoreCollectionItem extends StatelessWidget {
                           "Xem ngay",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: AppDimensions.smallestFontSize,
                             fontWeight: FontWeight.normal,
                             color: Colors.white,
                           ),
@@ -68,7 +69,7 @@ class MoreCollectionItem extends StatelessWidget {
                         subtitle!,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 12),
+                        style: AppTextStyles.smallerMediumFont,
                       ),
               ],
             ),

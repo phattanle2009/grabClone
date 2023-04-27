@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/home/sections/items/more_collection_item.dart';
 
 class HomeMoreSection extends StatelessWidget {
@@ -15,7 +16,7 @@ class HomeMoreSection extends StatelessWidget {
       ),
       child: Text(
         "Do more with Grab",
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+        style: AppTextStyles.biggerBoldFont,
       ),
     );
   }

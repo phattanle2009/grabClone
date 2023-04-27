@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class SmallButtonItem extends StatelessWidget {
   String title;
@@ -41,9 +42,7 @@ class SmallButtonItem extends StatelessWidget {
           Text(
             title,
             maxLines: 1,
-            style: TextStyle(
-              fontSize: 14,
-            ),
+            style: AppTextStyles.smallMediumFont,
           ),
         ],
       ),

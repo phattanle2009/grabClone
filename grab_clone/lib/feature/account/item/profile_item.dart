@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class ProfileItem extends StatelessWidget {
   String title;
+  bool isHeaderTitle;
   String? label;
   String? leadingIconName;
   Color? labelColor;
@@ -12,11 +14,22 @@ class ProfileItem extends StatelessWidget {
 
   ProfileItem({
     required this.title,
+    this.isHeaderTitle = false,
     this.label = null,
     this.leadingIconName = null,
     this.labelColor = null,
     this.backgroundColorForLabel = null,
   });
+
+  Widget _configHeader() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: AppDimensions.largeSize),
+      child: Text(
+        title,
+        style: AppTextStyles.bigBoldFont,
+      ),
+    );
+  }
 
   Widget _config(BuildContext context) {
     return Container(
@@ -29,10 +42,7 @@ class ProfileItem extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                  ),
+                  style: AppTextStyles.smallMediumFont,
                 ),
               ),
               leadingIconName == null
@@ -61,7 +71,7 @@ class ProfileItem extends StatelessWidget {
                         label!,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: backgroundColorForLabel == null ? 12 : 10,
+                          fontSize: backgroundColorForLabel == null ? AppDimensions.smallerFontSize : AppDimensions.smallestFontSize,
                           fontWeight: backgroundColorForLabel == null ? FontWeight.normal : FontWeight.bold,
                           color: labelColor ?? Colors.white,
                         ),
@@ -88,6 +98,6 @@ class ProfileItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _config(context);
+    return isHeaderTitle ? _configHeader() : _config(context);
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/home/sections/items/grab_unlimited_item.dart';
 
 class DiscoveringSection extends StatelessWidget {
@@ -15,7 +16,7 @@ class DiscoveringSection extends StatelessWidget {
       ),
       child: Text(
         "Keep discovering",
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+        style: AppTextStyles.biggerBoldFont,
       ),
     );
   }

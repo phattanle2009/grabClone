@@ -89,12 +89,12 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
         selectedItemColor: Colors.green,
         selectedLabelStyle: const TextStyle(
           color: AppColors.lightGreen,
-          fontSize: 10,
+          fontSize: AppDimensions.smallestFontSize,
           fontWeight: FontWeight.w700,
         ),
         unselectedLabelStyle: const TextStyle(
           color: AppColors.lightGray,
-          fontSize: 10,
+          fontSize: AppDimensions.smallestFontSize,
           fontWeight: FontWeight.w400,
         ),
         onTap: _onItemTapped,

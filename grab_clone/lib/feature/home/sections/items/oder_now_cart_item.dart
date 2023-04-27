@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class OderNowCartItem extends StatelessWidget {
   String title;
@@ -23,7 +24,7 @@ class OderNowCartItem extends StatelessWidget {
           children: [
             Text(
               "Order now",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              style: AppTextStyles.biggerBoldFont,
             ),
             AppDimensions.smallWidthSpace,
             Container(
@@ -52,11 +53,11 @@ class OderNowCartItem extends StatelessWidget {
         AppDimensions.smallerHeightSpace,
         Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+          style: AppTextStyles.bigBoldFont,
         ),
         Text(
           subTitle,
-          style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14.0),
+          style: AppTextStyles.smallMediumFont,
         ),
       ],
     );

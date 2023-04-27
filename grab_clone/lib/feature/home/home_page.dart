@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         "That's all for now!",
         style: TextStyle(
           color: AppColors.lightGray,
-          fontSize: 12,
+          fontSize: AppDimensions.smallerFontSize,
         ),
       ),
     );

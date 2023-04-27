@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class RecentTransactionSection extends StatelessWidget {
   const RecentTransactionSection({super.key});
@@ -18,10 +19,7 @@ class RecentTransactionSection extends StatelessWidget {
         children: [
           Text(
             "Recent transactions",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-            ),
+            style: AppTextStyles.biggestBoldFont,
           ),
           AppDimensions.largestHeightSpace,
           Center(
