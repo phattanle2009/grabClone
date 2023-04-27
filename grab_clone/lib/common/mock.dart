@@ -1,4 +1,7 @@
+import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/model/menu_model.dart';
 import 'package:grab_clone/model/notification_model.dart';
 import 'package:grab_clone/model/suggestion_model.dart';
 
@@ -135,6 +138,84 @@ class Mock {
       subtitle: "Giảm đến 50% + 130k",
       datetime: "6 Apr",
       asRead: false,
+    ),
+  ];
+
+  List<MenuModel> menuItems = [
+    MenuModel(
+      title: "For more value",
+      isHeaderTitle: true,
+    ),
+    MenuModel(
+      title: "Rewards",
+    ),
+    MenuModel(
+      title: "Subscriptions",
+      label: "New",
+      backgroundColorForLabel: AppColors.red,
+    ),
+    MenuModel(
+      title: "Challenges",
+    ),
+    MenuModel(
+      title: "Referrals",
+      label: "New",
+      backgroundColorForLabel: AppColors.red,
+    ),
+    MenuModel(
+      title: "My account",
+      isHeaderTitle: true,
+    ),
+    MenuModel(
+      title: "Rewards Member",
+      leadingIconName: AppIcons.queen,
+      label: "0 Points",
+      labelColor: AppColors.lightGray,
+    ),
+    MenuModel(
+      title: "Favourites",
+      label: "New",
+      backgroundColorForLabel: AppColors.red,
+    ),
+    MenuModel(
+      title: "Payment Methods",
+    ),
+    MenuModel(
+      title: "Scheduled",
+    ),
+    MenuModel(
+      title: "Saved Places",
+    ),
+    MenuModel(
+      title: "Emergency Contacts",
+    ),
+    MenuModel(
+      title: "Business Account",
+    ),
+    MenuModel(
+      title: "General",
+      isHeaderTitle: true,
+    ),
+    MenuModel(
+      title: "Help Centre",
+    ),
+    MenuModel(
+      title: "Settings",
+    ),
+    MenuModel(
+      title: "Share Feedback",
+    ),
+    MenuModel(
+      title: "Opportunities",
+      isHeaderTitle: true,
+    ),
+    MenuModel(
+      title: "Support the Environment",
+      label: "New",
+      backgroundColorForLabel: AppColors.red,
+    ),
+    MenuModel(
+      title: "Drive With Grab",
     ),
   ];
 }
