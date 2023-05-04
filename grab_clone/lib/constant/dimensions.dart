@@ -9,6 +9,7 @@ class AppDimensions {
   static const largerSize = 36.0;
   static const largestSize = 48.0;
   static const bigSize = 60.0;
+  static const littleBigSize = 100.0;
   static const bigerSize = 120.0;
   static const bigestSize = 220.0;
 

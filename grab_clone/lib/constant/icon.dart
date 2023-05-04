@@ -43,6 +43,9 @@ class AppIcons {
   static String get cryptocurrency => "cryptocurrency".iconPath;
   static String get present => "present".iconPath;
   static String get space => "space".iconPath;
+  static String get leftArrow => "left_arrow".iconPath;
+  static String get leftDirection => "left_direction".iconPath;
+  static String get bookmark => "bookmark".iconPath;
 }
 
 extension AppIconsiconPath on String {
