@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
+import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/sections/suggestion_section.dart';
 import 'package:grab_clone/feature/home/view/favourite/favourite_bloc.dart';
@@ -46,6 +46,7 @@ class _FavouritePageState extends State<FavouritePage> {
       initialIndex: 1,
       length: 2,
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
           leadingWidth: AppDimensions.customButtonHeight,
@@ -67,7 +68,6 @@ class _FavouritePageState extends State<FavouritePage> {
           },
         ),
         body: Container(
-          color: Colors.white,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
