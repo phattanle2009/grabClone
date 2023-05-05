@@ -46,6 +46,8 @@ class AppIcons {
   static String get leftArrow => "left_arrow".iconPath;
   static String get leftDirection => "left_direction".iconPath;
   static String get bookmark => "bookmark".iconPath;
+  static String get location => "location".iconPath;
+  static String get clear => "clear".iconPath;
 }
 
 extension AppIconsiconPath on String {

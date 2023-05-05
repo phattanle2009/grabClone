@@ -49,6 +49,7 @@ class AppDimensions {
 
   // Tool bar height
   static const toolBarHeight = 80.0;
+  static const navigationBarHeight = 44.0;
 
   // Button height
   static const customButtonHeight = 50.0;
