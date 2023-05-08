@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/icon.dart';
-import 'package:grab_clone/constant/text.dart';
-import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/extension/build_context_extension.dart';
-import 'package:grab_clone/feature/widgets/search_bar.dart';
-import 'package:grab_clone/feature/widgets/tag_label.dart';
+import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
+import 'package:grab_clone/feature/home/view/search/search_location_navigation.dart';
 
 class SearchLocationPage extends StatefulWidget {
   const SearchLocationPage({super.key});
@@ -16,110 +13,51 @@ class SearchLocationPage extends StatefulWidget {
 
 class _SearchLocationPageState extends State<SearchLocationPage> {
   String _navigationTitle = "Pick Up/Drop Off Gate";
+  bool isSearchSuggestion = true;
+  bool isShowShadow = false;
+  ScrollController _scrollController = ScrollController();
 
-  Widget _configLeading(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          AppDimensions.smallWidthSpace,
-          InkWell(
-            onTap: () {
-              context.pop();
-            },
-            child: Image.asset(
-              AppIcons.leftArrow,
-              width: AppDimensions.largeSize,
-            ),
-          ),
-          AppDimensions.smallWidthSpace,
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Your location",
-                  style: AppTextStyles.smallerMediumFont,
-                ),
-                AppDimensions.smallerHeightSpace,
-                Container(
-                  height: AppDimensions.mediumSize,
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        AppIcons.location,
-                        width: 16,
-                      ),
-                      AppDimensions.smallerWidthSpace,
-                      Text(
-                        _navigationTitle,
-                        style: AppTextStyles.smallBoldFont,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+  @override
+  void initState() {
+    _scrollController.addListener(() {
+      isShowShadow = _scrollController.offset != 0;
+    });
+    super.initState();
   }
 
-  Widget _listSearchTags() {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppDimensions.mediumSize,
-      ),
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          TagLabel(text: "All", isFill: true),
-          AppDimensions.smallerWidthSpace,
-          TagLabel(text: "Destinations"),
-          AppDimensions.smallerWidthSpace,
-          TagLabel(text: "Restaurant"),
-          AppDimensions.smallerWidthSpace,
-          TagLabel(text: "Groceries and supplies"),
-        ],
-      ),
-    );
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
-  DefaultTabController _buildAppBar(BuildContext context) {
-    return DefaultTabController(
-      initialIndex: 1,
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 100,
-          elevation: 0,
-          centerTitle: false,
-          notificationPredicate: (ScrollNotification notification) {
-            return notification.depth == 1;
-          },
-          leading: _configLeading(context),
-          leadingWidth: MediaQuery.of(context).size.width,
-          bottom: PreferredSize(
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                vertical: 10,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SearchBarWidget(
-                    height: AppDimensions.navigationBarHeight,
-                  ),
-                  AppDimensions.smallHeightSpace,
-                  _listSearchTags(),
-                ],
+  Widget _buildAppBar(BuildContext context) {
+    var list = Mock.searchItems;
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SearchLocationNavigation(
+              navigationTitle: _navigationTitle,
+              isSearchSuggestion: isSearchSuggestion,
+            ),
+            Expanded(
+              child: ListView.builder(
+                controller: _scrollController,
+                itemCount: list.length,
+                padding: const EdgeInsets.symmetric(horizontal: AppDimensions.mediumSize),
+                scrollDirection: Axis.vertical,
+                itemBuilder: (BuildContext context, int index) {
+                  return SearchLocationItem(
+                    title: list[index].title,
+                    address: list[index].detailAddress ?? "",
+                    type: list[index].type,
+                  );
+                },
               ),
             ),
-            preferredSize: Size.fromHeight(50),
-          ),
-        ),
-        body: Container(
-          color: Colors.white,
+          ],
         ),
       ),
     );
