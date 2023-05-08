@@ -13,7 +13,7 @@ class AccountPage extends StatefulWidget {
 
 class _AccountPageState extends State<AccountPage> {
   Widget _config() {
-    var list = Mock().menuItems;
+    var list = Mock.menuItems;
     return ListView.builder(
       itemCount: list.length + 1,
       padding: const EdgeInsets.symmetric(horizontal: AppDimensions.mediumSize),

@@ -18,7 +18,7 @@ class _MessagePageState extends State<MessagePage> {
   var isNotiSelected = true;
 
   Widget _renderList() {
-    var list = Mock().notifications;
+    var list = Mock.notifications;
     return ListView.builder(
       itemCount: list.length,
       itemBuilder: (BuildContext context, int index) {

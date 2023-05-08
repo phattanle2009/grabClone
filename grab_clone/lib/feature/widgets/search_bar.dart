@@ -20,6 +20,7 @@ class SearchBarWidget extends StatelessWidget {
             hintText: 'Search...',
             border: InputBorder.none,
             isCollapsed: true,
+            fillColor: null,
           ),
           textAlignVertical: TextAlignVertical.center,
         ),
@@ -38,7 +39,7 @@ class SearchBarWidget extends StatelessWidget {
         horizontal: AppDimensions.mediumSize,
       ),
       decoration: BoxDecoration(
-        color: AppColors.lighterGrey,
+        color: AppColors.mediumGrey,
         borderRadius: BorderRadius.all(
           Radius.circular(
             AppDimensions.smallerBorder,
