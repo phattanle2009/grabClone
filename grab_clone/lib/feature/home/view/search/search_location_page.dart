@@ -14,13 +14,13 @@ class SearchLocationPage extends StatefulWidget {
 class _SearchLocationPageState extends State<SearchLocationPage> {
   String _navigationTitle = "Pick Up/Drop Off Gate";
   bool isSearchSuggestion = true;
-  bool isShowShadow = false;
+  bool _isShowShadow = false;
   ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     _scrollController.addListener(() {
-      isShowShadow = _scrollController.offset != 0;
+      _isShowShadow = _scrollController.offset != 0;
     });
     super.initState();
   }
@@ -34,6 +34,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
   Widget _buildAppBar(BuildContext context) {
     var list = Mock.searchItems;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,6 +42,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
             SearchLocationNavigation(
               navigationTitle: _navigationTitle,
               isSearchSuggestion: isSearchSuggestion,
+              isShowShadow: _isShowShadow,
             ),
             Expanded(
               child: ListView.builder(

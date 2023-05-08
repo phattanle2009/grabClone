@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/dimensions.dart';
@@ -9,14 +10,17 @@ import 'package:grab_clone/extension/build_context_extension.dart';
 class SearchLocationNavigation extends StatelessWidget {
   String navigationTitle;
   bool isSearchSuggestion;
+  bool isShowShadow;
 
   SearchLocationNavigation({
     required this.navigationTitle,
     required this.isSearchSuggestion,
+    required this.isShowShadow,
   });
 
   Widget _configLeading(BuildContext context) {
     return Container(
+      color: Colors.white,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -69,6 +73,7 @@ class SearchLocationNavigation extends StatelessWidget {
 
   Widget _bottom() {
     return Container(
+      decoration: isShowShadow ? _configShadow() : null,
       padding: EdgeInsets.symmetric(
         vertical: 10,
       ),
@@ -102,6 +107,19 @@ class SearchLocationNavigation extends StatelessWidget {
           TagLabel(text: "Groceries and supplies"),
         ],
       ),
+    );
+  }
+
+  BoxDecoration _configShadow() {
+    return BoxDecoration(
+      color: Colors.white,
+      boxShadow: <BoxShadow>[
+        BoxShadow(
+          color: AppColors.lighterGrey,
+          blurRadius: 18,
+          offset: Offset(0.0, 24.0),
+        )
+      ],
     );
   }
 
