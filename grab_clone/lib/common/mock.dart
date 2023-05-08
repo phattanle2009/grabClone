@@ -1,9 +1,11 @@
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
 import 'package:grab_clone/model/menu_model.dart';
 import 'package:grab_clone/model/notification_model.dart';
 import 'package:grab_clone/model/suggestion_model.dart';
+import 'package:grab_clone/model/suggestion_search_model.dart';
 
 class Mock {
   static List<SuggestionModel> restaurants = [
@@ -72,7 +74,7 @@ class Mock {
     ),
   ];
 
-  List<NotificationModel> notifications = [
+  static List<NotificationModel> notifications = [
     NotificationModel(
       title: "😱Đừng để bảo hiểm xe hết hạn!!!",
       subtitle: "Nhấp vào mua ngay! Bao lẹ, bao chill ~",
@@ -141,7 +143,7 @@ class Mock {
     ),
   ];
 
-  List<MenuModel> menuItems = [
+  static List<MenuModel> menuItems = [
     MenuModel(
       title: "For more value",
       isHeaderTitle: true,
@@ -216,6 +218,60 @@ class Mock {
     ),
     MenuModel(
       title: "Drive With Grab",
+    ),
+  ];
+
+  static List<SuggestionSearchModel> searchItems = [
+    SuggestionSearchModel(
+      title: "tan son nhat internation airport",
+      type: SuggestionSearchLocationType.searchText,
+    ),
+    SuggestionSearchModel(
+      title: "airport",
+      type: SuggestionSearchLocationType.searchText,
+    ),
+    SuggestionSearchModel(
+      title: "bánh cuốn",
+      type: SuggestionSearchLocationType.searchText,
+    ),
+    SuggestionSearchModel(
+      title: "cơm sườn ngon",
+      type: SuggestionSearchLocationType.searchText,
+    ),
+    SuggestionSearchModel(
+      title: "781 Âu Cơ",
+      detailAddress: "781 Âu Cơ, P.Tân Thành, Q.Tân Phú, Hồ Chí Minh, 700000, Việt Nam",
+      type: SuggestionSearchLocationType.recently,
+    ),
+    SuggestionSearchModel(
+      title: "65/7 Street No.14",
+      detailAddress: "65/7 Đường số 14, P.11, Q.Gò Vấp, Hồ Chí Minh, 700000, VietNam",
+      type: SuggestionSearchLocationType.recently,
+    ),
+    SuggestionSearchModel(
+      title: "West Coach Station",
+      detailAddress: "295 Kinh Dương Vương, P.An Lạc, Q.Bình Tân, Hồ Chí Minh, 700000, VietNam",
+      type: SuggestionSearchLocationType.recently,
+    ),
+    SuggestionSearchModel(
+      title: "Công ty TNHH Nakano Precision - Nakano Precision Co.,LTD",
+      detailAddress: "Lô III-3B Đường 12, Nhóm Công nghiệp III, KCN Linh Xuân, Thành Phố Thủ Đức",
+      type: SuggestionSearchLocationType.destination,
+    ),
+    SuggestionSearchModel(
+      title: "Naked sushi",
+      detailAddress: "193A/6 Trần Quang Diệu, P.14, Q.3, Hồ Chí Minh",
+      type: SuggestionSearchLocationType.destination,
+    ),
+    SuggestionSearchModel(
+      title: "Shop Game Nakata - Nakata Game Shop",
+      detailAddress: "7/12 Nam Kỳ Khởi Nghĩa, P.Võ Thị Sáu, Q.3, Hồ Chí Minh, 700000, VietNam",
+      type: SuggestionSearchLocationType.destination,
+    ),
+    SuggestionSearchModel(
+      title: "Nakharat Thai Restaurant - Nakharat Thai Restaurant",
+      detailAddress: "Đường N2, P.Thống Nhất, Tp.Biên Hòa, Đồng Nai, VietNam",
+      type: SuggestionSearchLocationType.destination,
     ),
   ];
 }
