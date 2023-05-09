@@ -3,6 +3,7 @@ import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_navigation.dart';
+import 'package:grab_clone/feature/home/view/search/search_location_page_bloc.dart';
 
 class SearchLocationPage extends StatefulWidget {
   const SearchLocationPage({super.key});
@@ -14,13 +15,13 @@ class SearchLocationPage extends StatefulWidget {
 class _SearchLocationPageState extends State<SearchLocationPage> {
   String _navigationTitle = "Pick Up/Drop Off Gate";
   bool isSearchSuggestion = true;
-  bool _isShowShadow = false;
   ScrollController _scrollController = ScrollController();
+  final _searchLocationPageBloc = SearchLocationPageBloc();
 
   @override
   void initState() {
     _scrollController.addListener(() {
-      _isShowShadow = _scrollController.offset != 0;
+      _searchLocationPageBloc.change("${_scrollController.offset != 0}");
     });
     super.initState();
   }
@@ -28,6 +29,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _searchLocationPageBloc.dispose();
     super.dispose();
   }
 
@@ -39,10 +41,16 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SearchLocationNavigation(
-              navigationTitle: _navigationTitle,
-              isSearchSuggestion: isSearchSuggestion,
-              isShowShadow: _isShowShadow,
+            StreamBuilder(
+              stream: _searchLocationPageBloc.isShowShadow,
+              builder: (context, snapshot) {
+                final data = snapshot.data ?? "";
+                return SearchLocationNavigation(
+                  navigationTitle: _navigationTitle,
+                  isSearchSuggestion: isSearchSuggestion,
+                  isShowShadow: data == "true",
+                );
+              },
             ),
             Expanded(
               child: ListView.builder(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
+import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/widgets/tag_label.dart';
 import 'package:grab_clone/feature/widgets/search_bar.dart';
