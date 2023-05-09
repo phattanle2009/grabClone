@@ -253,6 +253,9 @@ class Mock {
       detailAddress: "295 Kinh Dương Vương, P.An Lạc, Q.Bình Tân, Hồ Chí Minh, 700000, VietNam",
       type: SuggestionSearchLocationType.recently,
     ),
+  ];
+
+  static List<SuggestionSearchModel> destinationItems = [
     SuggestionSearchModel(
       title: "Công ty TNHH Nakano Precision - Nakano Precision Co.,LTD",
       detailAddress: "Lô III-3B Đường 12, Nhóm Công nghiệp III, KCN Linh Xuân, Thành Phố Thủ Đức",
@@ -274,4 +277,6 @@ class Mock {
       type: SuggestionSearchLocationType.destination,
     ),
   ];
+
+  static List<String> tagItems = ["All", "Destinations", "Restaurant", "Groceries and supplies"];
 }

@@ -6,9 +6,11 @@ import 'package:grab_clone/constant/icon.dart';
 class SearchBarWidget extends StatelessWidget {
   double height;
   final TextEditingController _searchController = TextEditingController();
+  final Function(String) onSubmitted;
 
   SearchBarWidget({
     required this.height,
+    required this.onSubmitted,
   });
 
   Widget _textfield() {
@@ -23,6 +25,7 @@ class SearchBarWidget extends StatelessWidget {
             fillColor: null,
           ),
           textAlignVertical: TextAlignVertical.center,
+          onSubmitted: (value) => onSubmitted(value),
         ),
       ),
     );

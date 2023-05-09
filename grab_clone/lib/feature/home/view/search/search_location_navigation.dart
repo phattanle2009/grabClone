@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/colors.dart';
@@ -11,11 +12,15 @@ class SearchLocationNavigation extends StatelessWidget {
   String navigationTitle;
   bool isSearchSuggestion;
   bool isShowShadow;
+  final Function(String) onSubmitted;
+  final Function(String) onTappedLabel;
 
   SearchLocationNavigation({
     required this.navigationTitle,
     required this.isSearchSuggestion,
     required this.isShowShadow,
+    required this.onSubmitted,
+    required this.onTappedLabel,
   });
 
   Widget _configLeading(BuildContext context) {
@@ -82,9 +87,10 @@ class SearchLocationNavigation extends StatelessWidget {
         children: [
           SearchBarWidget(
             height: AppDimensions.navigationBarHeight,
+            onSubmitted: (value) => onSubmitted(value),
           ),
           AppDimensions.smallHeightSpace,
-          _listSearchTags(),
+          isSearchSuggestion ? Container() : _listSearchTags(),
         ],
       ),
     );
@@ -98,17 +104,46 @@ class SearchLocationNavigation extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          TagLabel(text: "All", isFill: true),
-          AppDimensions.smallerWidthSpace,
-          TagLabel(text: "Destinations"),
-          AppDimensions.smallerWidthSpace,
-          TagLabel(text: "Restaurant"),
-          AppDimensions.smallerWidthSpace,
-          TagLabel(text: "Groceries and supplies"),
+          TagLabel(
+            text: "All",
+            onTappedLabel: (value) => onTappedLabel(value),
+          ),
+          // AppDimensions.smallerWidthSpace,
+          TagLabel(
+            text: "Destinations",
+            onTappedLabel: (value) => onTappedLabel(value),
+          ),
+          // AppDimensions.smallerWidthSpace,
+          TagLabel(
+            text: "Restaurant",
+            onTappedLabel: (value) => onTappedLabel(value),
+          ),
+          // AppDimensions.smallerWidthSpace,
+          TagLabel(
+            text: "Groceries and supplies",
+            onTappedLabel: (value) => onTappedLabel(value),
+          ),
         ],
       ),
     );
   }
+
+  // Widget _listSearchTags() {
+  //   final list = Mock.tagItems;
+  //   return ListView.builder(
+  //     itemCount: list.length,
+  //     itemBuilder: (context, index) {
+  //       return TagLabel(
+  //         text: list[index],
+  //         onTappedLabel: (value) => onTappedLabel(value),
+  //       );
+  //     },
+  //     padding: EdgeInsets.symmetric(
+  //       horizontal: AppDimensions.mediumSize,
+  //     ),
+  //     scrollDirection: Axis.horizontal,
+  //   );
+  // }
 
   BoxDecoration _configShadow() {
     return BoxDecoration(
