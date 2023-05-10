@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:grab_clone/bloc/bloc.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_state.dart';
 
 class SearchLocationPageBloc extends Bloc {
-  final _controller = StreamController<SearchLocationState>();
   late Stream<SearchLocationState> searchState;
+  final _controller = StreamController<SearchLocationState>();
+  final TextEditingController searchController = TextEditingController();
 
   SearchLocationPageBloc() {
     bindingController();
@@ -17,6 +19,7 @@ class SearchLocationPageBloc extends Bloc {
   @override
   void dispose() {
     _controller.close();
+    searchController.dispose();
   }
 
   void changeOffset(SearchLocationState currentState, double offset) {
@@ -35,6 +38,15 @@ class SearchLocationPageBloc extends Bloc {
   void changeSuggestionSearch(SearchLocationState currentState, bool value) {
     var state = currentState;
     state.isSuggestionSearch = value;
+    if (value == false) {
+      state.selectedLabel = "All";
+    }
+    _controller.sink.add(state);
+  }
+
+  void selectedLabel(SearchLocationState currentState, String value) {
+    var state = currentState;
+    state.selectedLabel = value;
     _controller.sink.add(state);
   }
 }

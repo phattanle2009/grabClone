@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/feature/home/view/search/search_location_state.dart';
+import 'package:grab_clone/feature/home/view/search/search_location_page_bloc.dart';
 import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_navigation.dart';
-import 'package:grab_clone/feature/home/view/search/search_location_page_bloc.dart';
-import 'package:grab_clone/feature/home/view/search/search_location_state.dart';
 
 class SearchLocationPage extends StatefulWidget {
   const SearchLocationPage({super.key});
@@ -14,7 +14,6 @@ class SearchLocationPage extends StatefulWidget {
 }
 
 class _SearchLocationPageState extends State<SearchLocationPage> {
-  String _navigationTitle = "Pick Up/Drop Off Gate";
   bool isSearchSuggestion = true;
   ScrollController _scrollController = ScrollController();
   final _searchLocationPageBloc = SearchLocationPageBloc();
@@ -51,12 +50,18 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
                   navigationTitle: data.searchNavigationTitle,
                   isSearchSuggestion: data.isSuggestionSearch,
                   isShowShadow: data.isShowShadow,
+                  selectedLabel: data.selectedLabel,
+                  searchController: _searchLocationPageBloc.searchController,
+                  onCleared: () {
+                    _searchLocationPageBloc.searchController.clear();
+                    _searchLocationPageBloc.changeSuggestionSearch(_searchLocationState, true);
+                  },
                   onSubmitted: (value) => _searchLocationPageBloc.changeSuggestionSearch(
                     _searchLocationState,
                     value == "",
                   ),
-                  onTappedLabel: (p0) {
-                    print(p0);
+                  onTappedLabel: (value) {
+                    _searchLocationPageBloc.selectedLabel(_searchLocationState, value);
                   },
                 );
               },

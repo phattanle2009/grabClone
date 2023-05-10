@@ -5,19 +5,22 @@ import 'package:grab_clone/constant/icon.dart';
 
 class SearchBarWidget extends StatelessWidget {
   double height;
-  final TextEditingController _searchController = TextEditingController();
+  TextEditingController searchController;
   final Function(String) onSubmitted;
+  final Function onCleared;
 
   SearchBarWidget({
     required this.height,
+    required this.searchController,
     required this.onSubmitted,
+    required this.onCleared,
   });
 
   Widget _textfield() {
     return Expanded(
       child: Container(
         child: TextField(
-          controller: _searchController,
+          controller: searchController,
           decoration: InputDecoration(
             hintText: 'Search...',
             border: InputBorder.none,
@@ -61,7 +64,7 @@ class SearchBarWidget extends StatelessWidget {
           AppDimensions.smallerWidthSpace,
           InkWell(
             onTap: () {
-              _searchController.clear();
+              onCleared();
             },
             child: Image.asset(
               AppIcons.clear,
@@ -79,3 +82,6 @@ class SearchBarWidget extends StatelessWidget {
     return _config();
   }
 }
+
+// Wrap
+// AnimatedContainer

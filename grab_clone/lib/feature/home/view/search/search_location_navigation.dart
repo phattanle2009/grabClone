@@ -12,6 +12,9 @@ class SearchLocationNavigation extends StatelessWidget {
   String navigationTitle;
   bool isSearchSuggestion;
   bool isShowShadow;
+  String selectedLabel;
+  TextEditingController searchController;
+  final Function onCleared;
   final Function(String) onSubmitted;
   final Function(String) onTappedLabel;
 
@@ -19,6 +22,9 @@ class SearchLocationNavigation extends StatelessWidget {
     required this.navigationTitle,
     required this.isSearchSuggestion,
     required this.isShowShadow,
+    required this.selectedLabel,
+    required this.searchController,
+    required this.onCleared,
     required this.onSubmitted,
     required this.onTappedLabel,
   });
@@ -87,63 +93,39 @@ class SearchLocationNavigation extends StatelessWidget {
         children: [
           SearchBarWidget(
             height: AppDimensions.navigationBarHeight,
+            searchController: searchController,
             onSubmitted: (value) => onSubmitted(value),
+            onCleared: () => onCleared(),
           ),
           AppDimensions.smallHeightSpace,
-          isSearchSuggestion ? Container() : _listSearchTags(),
+          _listSearchTags(),
         ],
       ),
     );
   }
 
   Widget _listSearchTags() {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppDimensions.mediumSize,
-      ),
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          TagLabel(
-            text: "All",
+    final list = Mock.tagItems;
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 200),
+      curve: Curves.ease,
+      height: isSearchSuggestion ? 0 : 30,
+      child: ListView.builder(
+        itemCount: list.length,
+        itemBuilder: (context, index) {
+          return TagLabel(
+            text: list[index],
             onTappedLabel: (value) => onTappedLabel(value),
-          ),
-          // AppDimensions.smallerWidthSpace,
-          TagLabel(
-            text: "Destinations",
-            onTappedLabel: (value) => onTappedLabel(value),
-          ),
-          // AppDimensions.smallerWidthSpace,
-          TagLabel(
-            text: "Restaurant",
-            onTappedLabel: (value) => onTappedLabel(value),
-          ),
-          // AppDimensions.smallerWidthSpace,
-          TagLabel(
-            text: "Groceries and supplies",
-            onTappedLabel: (value) => onTappedLabel(value),
-          ),
-        ],
+            isFill: list[index] == selectedLabel,
+          );
+        },
+        padding: EdgeInsets.symmetric(
+          horizontal: AppDimensions.mediumSize,
+        ),
+        scrollDirection: Axis.horizontal,
       ),
     );
   }
-
-  // Widget _listSearchTags() {
-  //   final list = Mock.tagItems;
-  //   return ListView.builder(
-  //     itemCount: list.length,
-  //     itemBuilder: (context, index) {
-  //       return TagLabel(
-  //         text: list[index],
-  //         onTappedLabel: (value) => onTappedLabel(value),
-  //       );
-  //     },
-  //     padding: EdgeInsets.symmetric(
-  //       horizontal: AppDimensions.mediumSize,
-  //     ),
-  //     scrollDirection: Axis.horizontal,
-  //   );
-  // }
 
   BoxDecoration _configShadow() {
     return BoxDecoration(
