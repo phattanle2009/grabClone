@@ -86,7 +86,7 @@ class SearchLocationNavigation extends StatelessWidget {
     return Container(
       decoration: isShowShadow ? _configShadow() : null,
       padding: EdgeInsets.symmetric(
-        vertical: 10,
+        vertical: AppDimensions.smallerPadding,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,8 +133,8 @@ class SearchLocationNavigation extends StatelessWidget {
       boxShadow: <BoxShadow>[
         BoxShadow(
           color: AppColors.lighterGrey,
-          blurRadius: 18,
-          offset: Offset(0.0, 24.0),
+          blurRadius: AppDimensions.bigFontSize,
+          offset: Offset(0.0, AppDimensions.largeSize),
         )
       ],
     );
