@@ -12,6 +12,7 @@ class SearchLocationNavigation extends StatelessWidget {
   String navigationTitle;
   bool isSearchSuggestion;
   bool isShowShadow;
+  bool isShowSearchBar;
   String selectedLabel;
   TextEditingController searchController;
   final Function onCleared;
@@ -22,6 +23,7 @@ class SearchLocationNavigation extends StatelessWidget {
     required this.navigationTitle,
     required this.isSearchSuggestion,
     required this.isShowShadow,
+    required this.isShowSearchBar,
     required this.selectedLabel,
     required this.searchController,
     required this.onCleared,
@@ -91,15 +93,23 @@ class SearchLocationNavigation extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchBarWidget(
-            height: AppDimensions.navigationBarHeight,
-            searchController: searchController,
-            onSubmitted: (value) => onSubmitted(value),
-            onCleared: () => onCleared(),
-          ),
+          _buildSearchBar(),
           AppDimensions.smallHeightSpace,
           _listSearchTags(),
         ],
+      ),
+    );
+  }
+
+  Widget _buildSearchBar() {
+    return AnimatedContainer(
+      duration: Duration(microseconds: 200),
+      curve: Curves.ease,
+      child: SearchBarWidget(
+        height: isShowSearchBar ? AppDimensions.navigationBarHeight : 0,
+        searchController: searchController,
+        onSubmitted: (value) => onSubmitted(value),
+        onCleared: () => onCleared(),
       ),
     );
   }

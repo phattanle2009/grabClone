@@ -25,6 +25,11 @@ class SearchLocationPageBloc extends Bloc {
   void changeOffset(SearchLocationState currentState, double offset) {
     var state = currentState;
     state.isShowShadow = offset != 0;
+    if (offset > state.scrolledOffset) {
+      state.isShowSearchBar = false;
+    } else {
+      state.isShowSearchBar = true;
+    }
     state.scrolledOffset = offset;
     _controller.sink.add(state);
   }

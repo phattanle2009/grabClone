@@ -4,6 +4,7 @@ class SearchLocationState {
   double scrolledOffset;
   String searchNavigationTitle;
   String selectedLabel;
+  bool isShowSearchBar;
 
   SearchLocationState({
     this.isShowShadow = false,
@@ -11,5 +12,6 @@ class SearchLocationState {
     this.isSuggestionSearch = true,
     this.searchNavigationTitle = "Pick Up/Drop Off Gate",
     this.selectedLabel = "All",
+    this.isShowSearchBar = true,
   });
 }
