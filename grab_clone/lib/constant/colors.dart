@@ -16,4 +16,5 @@ class AppColors {
   static const lighterBlue = Color(0xFF42C0E7);
   static const mediumPink = Color(0xFFFCDDF1);
   static const iconBackgroundGrey = Color(0xFFE4E8F0);
+  static const orange = Color(0xFFF38422);
 }

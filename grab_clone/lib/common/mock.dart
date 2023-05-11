@@ -74,6 +74,50 @@ class Mock {
     ),
   ];
 
+  static List<SuggestionModel> searchRestaurants = [
+    SuggestionModel(
+      merchantName: "Highlands Coffee - Hàn Hải Nguyên - Sài Gòn",
+      distance: 2.0,
+      rating: 4.4,
+      hotLabel: "Giảm giá",
+      imageName: AppImages.chicken1,
+      desc: "Coffee - Tea - Juice",
+      routeTime: "20 min",
+      moreInfos: "2 or more related results",
+      isPromo: true,
+    ),
+    SuggestionModel(
+      merchantName: "Say Coffee - Sư Vạn Hạnh",
+      distance: 2.3,
+      rating: 4.5,
+      hotLabel: "Giảm giá",
+      imageName: AppImages.chicken1,
+      desc: "Coffee - Tea - Juice, Tạp Dề Bạc",
+      routeTime: "25 min",
+      moreInfos: "3 or more related results",
+    ),
+    SuggestionModel(
+      merchantName: "Sushi Viên Ông Chủ Nhỏ 2 - Hậu Giang",
+      distance: 2.7,
+      rating: 4.3,
+      hotLabel: "Giảm giá",
+      imageName: AppImages.chicken1,
+      desc: "International Food",
+      routeTime: "30 min",
+      moreInfos: "2 or more related results",
+      isPromo: true,
+    ),
+    SuggestionModel(
+      merchantName: "AQ Food - Gà Ủ Muối Hoa Tiêu",
+      distance: 3.4,
+      rating: 4.7,
+      hotLabel: "Giảm giá",
+      imageName: AppImages.chicken1,
+      desc: "Coffee - Tea - Juice, Tạp Dề Vàng, Chicken",
+      routeTime: "20 min",
+    ),
+  ];
+
   static List<NotificationModel> notifications = [
     NotificationModel(
       title: "😱Đừng để bảo hiểm xe hết hạn!!!",
