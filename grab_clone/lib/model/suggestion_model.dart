@@ -5,6 +5,10 @@ class SuggestionModel {
   final int? cost;
   final String hotLabel;
   final String imageName;
+  final String desc;
+  final String routeTime;
+  final String? moreInfos;
+  final bool isPromo;
 
   SuggestionModel({
     required this.merchantName,
@@ -13,5 +17,9 @@ class SuggestionModel {
     this.cost,
     required this.hotLabel,
     required this.imageName,
+    this.desc = "",
+    this.routeTime = "",
+    this.moreInfos = "",
+    this.isPromo = false,
   });
 }

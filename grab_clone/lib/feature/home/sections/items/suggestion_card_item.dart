@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/extension/string_extension.dart';
 
 class SuggestionCartItem extends StatelessWidget {
