@@ -12,6 +12,7 @@ class SearchLocationPageBloc extends Bloc {
   SearchLocationPageBloc() {
     bindingController();
   }
+  
   @override
   void bindingController() {
     searchState = _controller.stream.map((event) => event);

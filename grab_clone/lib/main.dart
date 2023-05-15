@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/route.dart';
+import 'package:grab_clone/feature/splash/splash_page.dart';
 import 'package:grab_clone/tabbar/tabbar.dart';
 
 void main() {
@@ -19,9 +21,10 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        "/dashboard": (context) => DashboardNavigator(),
+        AppRoute.splashRoute: (context) => SplashPage(),
+        AppRoute.dashboardRoute: (context) => DashboardNavigator(),
       },
-      initialRoute: "/dashboard",
+      initialRoute: AppRoute.splashRoute,
     );
   }
 }

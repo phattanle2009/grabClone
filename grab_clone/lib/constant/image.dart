@@ -27,6 +27,7 @@ class AppImages {
   static String get discover10 => "discover10".path;
   static String get discover11 => "discover11".path;
   static String get discover12 => "discover12".path;
+  static String get splash => "splash".path;
 }
 
 extension AppImagesPath on String {
