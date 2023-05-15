@@ -108,18 +108,27 @@ class SearchRestaurantItem extends StatelessWidget {
         AppDimensions.smallestWidthSpace,
         Text(
           "$rating",
-          style: AppTextStyles.smallerMediumFont,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: AppDimensions.smallerFontSize,
+            color: AppColors.lightGray,
+          ),
         ),
         AppDimensions.smallerWidthSpace,
         Image.asset(
           AppIcons.clock,
           width: AppDimensions.imageSmallSize,
           height: AppDimensions.imageSmallSize,
+          color: AppColors.lightGray,
         ),
         AppDimensions.smallestWidthSpace,
         Text(
           "$routeTime min · $distance km",
-          style: AppTextStyles.smallerMediumFont,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: AppDimensions.smallerFontSize,
+            color: AppColors.lightGray,
+          ),
         ),
       ],
     );
@@ -139,7 +148,11 @@ class SearchRestaurantItem extends StatelessWidget {
         AppDimensions.smallestWidthSpace,
         Text(
           moreInfos!,
-          style: AppTextStyles.smallerMediumFont,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: AppDimensions.smallerFontSize,
+            color: AppColors.lightGray,
+          ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -167,6 +180,7 @@ class SearchRestaurantItem extends StatelessWidget {
         bottom: AppDimensions.smallSize,
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildThumbnail(),
           AppDimensions.mediumWidthSpace,

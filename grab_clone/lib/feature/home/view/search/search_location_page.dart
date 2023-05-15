@@ -25,7 +25,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
   void initState() {
     _listSuggestionScrollController.addListener(
       () {
-        _searchLocationPageBloc.changeOffset(
+        _searchLocationPageBloc.handleScrollAction(
           _searchLocationState,
           _listSuggestionScrollController.offset,
         );
@@ -33,7 +33,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
     );
     _listSearchScrollController.addListener(
       () {
-        _searchLocationPageBloc.changeOffset(
+        _searchLocationPageBloc.handleScrollAction(
           _searchLocationState,
           _listSearchScrollController.offset,
         );

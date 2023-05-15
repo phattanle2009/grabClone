@@ -82,6 +82,3 @@ class SearchBarWidget extends StatelessWidget {
     return _config();
   }
 }
-
-// Wrap
-// AnimatedContainer

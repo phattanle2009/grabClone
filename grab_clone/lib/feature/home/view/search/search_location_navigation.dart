@@ -64,7 +64,7 @@ class SearchLocationNavigation extends StatelessWidget {
                       children: [
                         Image.asset(
                           AppIcons.location,
-                          width: 16,
+                          width: AppDimensions.mediumSize,
                         ),
                         AppDimensions.smallerWidthSpace,
                         Text(
@@ -103,8 +103,8 @@ class SearchLocationNavigation extends StatelessWidget {
 
   Widget _buildSearchBar() {
     return AnimatedContainer(
-      duration: Duration(microseconds: 200),
-      curve: Curves.ease,
+      duration: Duration(microseconds: 100),
+      curve: Curves.easeInOutExpo,
       child: SearchBarWidget(
         height: isShowSearchBar ? AppDimensions.navigationBarHeight : 0,
         searchController: searchController,
