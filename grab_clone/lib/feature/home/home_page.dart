@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/feature/home/home_page_bloc.dart';
 import 'package:grab_clone/feature/home/sections/text_field.dart';
 import 'package:grab_clone/feature/home/sections/more_section.dart';
 import 'package:grab_clone/feature/home/sections/order_now_section.dart';
@@ -20,6 +21,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _bloc = HomePageBloc();
+
+  Widget _buildTextfieldHeader() {
+    return StreamBuilder(
+      stream: _bloc.result,
+      builder: (context, snapshot) {
+        final text = snapshot.data ?? "";
+        return HomeTextFieldHeader(text: text);
+      },
+    );
+  }
+
   Widget _bottomLabel(BuildContext context) {
     return Container(
       alignment: Alignment.center,
@@ -50,7 +63,7 @@ class _HomePageState extends State<HomePage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  HomeTextFieldHeader(),
+                  _buildTextfieldHeader(),
                   CollectionSection(),
                   CardCollectionSection(),
                   OrderNowSection(),

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/view/favourite/favourite_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
+  String text;
+
+  HomeTextFieldHeader({
+    required this.text,
+  });
+
   void _openFavouritePage(BuildContext context) async {
     context.push(FavouritePage());
   }
@@ -17,7 +23,7 @@ class HomeTextFieldHeader extends StatelessWidget {
 
   Widget _animatedText() {
     return Text(
-      "Search the Grab!",
+      text,
       style: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: AppDimensions.mediumSize,
