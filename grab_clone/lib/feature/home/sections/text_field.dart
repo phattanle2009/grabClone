@@ -7,7 +7,7 @@ import 'package:grab_clone/feature/home/view/favourite/favourite_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
-  String text;
+  final String text;
 
   HomeTextFieldHeader({
     required this.text,

@@ -4,10 +4,10 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class OderNowCartItem extends StatelessWidget {
-  String title;
-  String subTitle;
-  String imageName;
-  double width;
+  final String title;
+  final String subTitle;
+  final String imageName;
+  final double width;
 
   OderNowCartItem({
     required this.title,

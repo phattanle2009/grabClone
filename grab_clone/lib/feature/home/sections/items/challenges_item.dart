@@ -4,10 +4,10 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class ChallengesItem extends StatelessWidget {
-  String iconName;
-  String title;
-  String datetime;
-  String subtitle;
+  final String iconName;
+  final String title;
+  final String datetime;
+  final String subtitle;
 
   ChallengesItem({
     required this.iconName,

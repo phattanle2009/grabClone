@@ -3,7 +3,7 @@ import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class MoreResultButton extends StatelessWidget {
-  String title;
+  final String title;
 
   MoreResultButton({
     required this.title,

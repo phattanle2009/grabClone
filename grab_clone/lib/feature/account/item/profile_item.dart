@@ -5,12 +5,12 @@ import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class ProfileItem extends StatelessWidget {
-  String title;
-  bool isHeaderTitle;
-  String? label;
-  String? leadingIconName;
-  Color? labelColor;
-  Color? backgroundColorForLabel;
+  final String title;
+  final bool isHeaderTitle;
+  final String? label;
+  final String? leadingIconName;
+  final Color? labelColor;
+  final Color? backgroundColorForLabel;
 
   ProfileItem({
     required this.title,

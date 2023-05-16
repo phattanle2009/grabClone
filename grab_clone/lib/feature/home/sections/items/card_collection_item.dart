@@ -4,9 +4,9 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class CardCollectionItem extends StatelessWidget {
-  String title;
-  String subTitle;
-  String imageName;
+  final String title;
+  final String subTitle;
+  final String imageName;
 
   CardCollectionItem({
     required this.title,

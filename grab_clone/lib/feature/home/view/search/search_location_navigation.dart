@@ -9,12 +9,12 @@ import 'package:grab_clone/feature/widgets/search_bar.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 
 class SearchLocationNavigation extends StatelessWidget {
-  String navigationTitle;
-  bool isSearchSuggestion;
-  bool isShowShadow;
-  bool isShowSearchBar;
-  String selectedLabel;
-  TextEditingController searchController;
+  final String navigationTitle;
+  final bool isSearchSuggestion;
+  final bool isShowShadow;
+  final bool isShowSearchBar;
+  final String selectedLabel;
+  final TextEditingController searchController;
   final Function onCleared;
   final Function(String) onSubmitted;
   final Function(String) onTappedLabel;

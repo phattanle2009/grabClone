@@ -5,8 +5,8 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class PlacesCardItem extends StatelessWidget {
-  String title;
-  String address;
+  final String title;
+  final String address;
 
   PlacesCardItem({
     required this.title,

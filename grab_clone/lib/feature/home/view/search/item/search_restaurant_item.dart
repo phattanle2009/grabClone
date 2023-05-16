@@ -5,14 +5,14 @@ import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class SearchRestaurantItem extends StatelessWidget {
-  String title;
-  String desc;
-  String imageName;
-  double distance;
-  double rating;
-  String routeTime;
-  String? moreInfos;
-  bool isPromo;
+  final String title;
+  final String desc;
+  final String imageName;
+  final double distance;
+  final double rating;
+  final String routeTime;
+  final String? moreInfos;
+  final bool isPromo;
 
   SearchRestaurantItem({
     required this.title,

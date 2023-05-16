@@ -4,8 +4,8 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  double height;
-  TextEditingController searchController;
+  final double height;
+  final TextEditingController searchController;
   final Function(String) onSubmitted;
   final Function onCleared;
 

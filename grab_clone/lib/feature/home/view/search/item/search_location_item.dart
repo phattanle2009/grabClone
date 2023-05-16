@@ -11,9 +11,9 @@ enum SuggestionSearchLocationType {
 }
 
 class SearchLocationItem extends StatelessWidget {
-  String title;
-  String address;
-  SuggestionSearchLocationType type;
+  final String title;
+  final String address;
+  final SuggestionSearchLocationType type;
 
   SearchLocationItem({
     required this.title,

@@ -6,13 +6,13 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/extension/string_extension.dart';
 
 class SuggestionCartItem extends StatelessWidget {
-  String title;
-  String imageName;
-  double distance;
-  double rating;
-  int? cost;
-  String hotLabel;
-  double width;
+  final String title;
+  final String imageName;
+  final double distance;
+  final double rating;
+  final int? cost;
+  final String hotLabel;
+  final double width;
 
   SuggestionCartItem({
     required this.title,

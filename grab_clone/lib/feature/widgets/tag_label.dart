@@ -3,8 +3,8 @@ import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class TagLabel extends StatelessWidget {
-  String text;
-  bool isFill;
+  final String text;
+  final bool isFill;
   final Function(String) onTappedLabel;
 
   TagLabel({

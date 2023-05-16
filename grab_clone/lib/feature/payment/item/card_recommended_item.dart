@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class CardRecommendedItem extends StatelessWidget {
-  String title;
-  String imageName;
-  List<Color> colors;
+  final String title;
+  final String imageName;
+  final List<Color> colors;
 
   CardRecommendedItem({
     required this.title,

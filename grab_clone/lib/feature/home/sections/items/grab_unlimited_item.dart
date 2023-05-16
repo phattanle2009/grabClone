@@ -4,9 +4,9 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class GrabUnlimitedItem extends StatelessWidget {
-  String title;
-  String subtitle;
-  String backgroundImage;
+  final String title;
+  final String subtitle;
+  final String backgroundImage;
 
   GrabUnlimitedItem({
     required this.title,

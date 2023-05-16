@@ -4,9 +4,9 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class MoreCollectionItem extends StatelessWidget {
-  String title;
-  String? subtitle;
-  String iconName;
+  final String title;
+  final String? subtitle;
+  final String iconName;
 
   MoreCollectionItem({
     required this.title,

@@ -6,8 +6,8 @@ import 'package:grab_clone/model/suggestion_model.dart';
 import 'package:grab_clone/feature/home/sections/items/suggestion_card_item.dart';
 
 class SuggestionSection extends StatelessWidget {
-  String sectionHeader;
-  List<SuggestionModel> list;
+  final String sectionHeader;
+  final List<SuggestionModel> list;
 
   SuggestionSection({
     required this.sectionHeader,

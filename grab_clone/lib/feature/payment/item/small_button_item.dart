@@ -4,8 +4,8 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class SmallButtonItem extends StatelessWidget {
-  String title;
-  String imageName;
+  final String title;
+  final String imageName;
 
   SmallButtonItem({
     required this.title,

@@ -3,8 +3,8 @@ import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 
 class CircularCollectionItem extends StatelessWidget {
-  String title;
-  String imageName;
+  final String title;
+  final String imageName;
   final Function onPressed;
 
   CircularCollectionItem({

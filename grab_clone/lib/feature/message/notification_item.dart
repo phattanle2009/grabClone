@@ -5,10 +5,10 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class NotificationItems extends StatelessWidget {
-  String title;
-  String subtitle;
-  String datetime;
-  bool asRead;
+  final String title;
+  final String subtitle;
+  final String datetime;
+  final bool asRead;
 
   NotificationItems({
     required this.title,

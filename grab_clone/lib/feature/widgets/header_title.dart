@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class HeaderTitle extends StatelessWidget {
-  String sectionHeader;
+  final String sectionHeader;
 
   HeaderTitle({
     required this.sectionHeader,

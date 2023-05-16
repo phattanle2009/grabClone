@@ -8,7 +8,7 @@ import 'package:grab_clone/feature/home/view/search/item/search_restaurant_secti
 import 'package:grab_clone/feature/widgets/more_result.dart';
 
 class SearchList extends StatelessWidget {
-  ScrollController scrollController;
+  final ScrollController scrollController;
 
   SearchList({
     required this.scrollController,

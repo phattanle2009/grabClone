@@ -3,7 +3,7 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/text.dart';
 
 class ProfileSectionLabel extends StatelessWidget {
-  String title;
+  final String title;
 
   ProfileSectionLabel({
     required this.title,
