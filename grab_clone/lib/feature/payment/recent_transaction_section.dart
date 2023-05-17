@@ -33,16 +33,14 @@ class RecentTransactionSection extends StatelessWidget {
                 AppDimensions.mediumHeightSpace,
                 Text(
                   "There's no recent activity to show here.",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
+                  style: AppTextStyles.smallMediumFont.copyWith(
                     color: AppColors.lightGray,
                   ),
                 ),
                 AppDimensions.smallerHeightSpace,
                 Text(
                   "See past transactions",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
+                  style: AppTextStyles.smallBoldFont.copyWith(
                     color: Colors.blue,
                   ),
                 ),

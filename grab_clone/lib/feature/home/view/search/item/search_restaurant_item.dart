@@ -64,10 +64,8 @@ class SearchRestaurantItem extends StatelessWidget {
                   ),
                   child: Text(
                     "Promo",
-                    style: TextStyle(
+                    style: AppTextStyles.smallerBoldFont.copyWith(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: AppDimensions.smallerFontSize,
                     ),
                   ),
                 )
@@ -88,8 +86,7 @@ class SearchRestaurantItem extends StatelessWidget {
   Widget _buildDesc() {
     return Text(
       desc,
-      style: TextStyle(
-        fontSize: AppDimensions.smallerFontSize,
+      style: AppTextStyles.smallerMediumFont.copyWith(
         color: AppColors.lightGray,
       ),
       maxLines: 1,
@@ -108,9 +105,7 @@ class SearchRestaurantItem extends StatelessWidget {
         AppDimensions.smallestWidthSpace,
         Text(
           "$rating",
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: AppDimensions.smallerFontSize,
+          style: AppTextStyles.smallerMediumFont.copyWith(
             color: AppColors.lightGray,
           ),
         ),
@@ -124,9 +119,7 @@ class SearchRestaurantItem extends StatelessWidget {
         AppDimensions.smallestWidthSpace,
         Text(
           "$routeTime min · $distance km",
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: AppDimensions.smallerFontSize,
+          style: AppTextStyles.smallerMediumFont.copyWith(
             color: AppColors.lightGray,
           ),
         ),
@@ -148,9 +141,7 @@ class SearchRestaurantItem extends StatelessWidget {
         AppDimensions.smallestWidthSpace,
         Text(
           moreInfos!,
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: AppDimensions.smallerFontSize,
+          style: AppTextStyles.smallerMediumFont.copyWith(
             color: AppColors.lightGray,
           ),
           maxLines: 1,

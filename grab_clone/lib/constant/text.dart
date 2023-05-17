@@ -28,6 +28,12 @@ class AppTextStyles {
   );
 
   // Bold
+  static const smallestBoldFont = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: AppDimensions.smallestFontSize,
+    color: Colors.black,
+  );
+
   static const smallerBoldFont = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: AppDimensions.smallerFontSize,

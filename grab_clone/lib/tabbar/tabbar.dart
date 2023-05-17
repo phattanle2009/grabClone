@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/home/home_page.dart';
 import 'package:grab_clone/feature/payment/payment_page.dart';
 import 'package:grab_clone/feature/message/message_page.dart';
@@ -30,7 +31,8 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
     setState(() => _pageIndex = index);
   }
 
-  BottomNavigationBarItem _buildItemNavigator(String name, String iconSelect, String iconUnselect) {
+  BottomNavigationBarItem _buildItemNavigator(
+      String name, String iconSelect, String iconUnselect) {
     return BottomNavigationBarItem(
       label: name,
       icon: SizedBox(
@@ -87,15 +89,11 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
         currentIndex: _pageIndex,
         unselectedItemColor: AppColors.lightGray,
         selectedItemColor: Colors.green,
-        selectedLabelStyle: const TextStyle(
+        selectedLabelStyle: AppTextStyles.smallestBoldFont.copyWith(
           color: AppColors.lightGreen,
-          fontSize: AppDimensions.smallestFontSize,
-          fontWeight: FontWeight.w700,
         ),
-        unselectedLabelStyle: const TextStyle(
+        unselectedLabelStyle: AppTextStyles.smallestMediumFont.copyWith(
           color: AppColors.lightGray,
-          fontSize: AppDimensions.smallestFontSize,
-          fontWeight: FontWeight.w400,
         ),
         onTap: _onItemTapped,
         backgroundColor: Colors.white,

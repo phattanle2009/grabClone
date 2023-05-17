@@ -44,8 +44,7 @@ class GrabUnlimitedItem extends StatelessWidget {
           ),
           Text(
             subtitle,
-            style: TextStyle(
-              fontSize: AppDimensions.smallestFontSize,
+            style: AppTextStyles.smallestMediumFont.copyWith(
               color: AppColors.lightGray,
             ),
           ),

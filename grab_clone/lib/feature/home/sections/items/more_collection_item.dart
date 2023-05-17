@@ -58,9 +58,7 @@ class MoreCollectionItem extends StatelessWidget {
                         child: Text(
                           "Xem ngay",
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: AppDimensions.smallestFontSize,
-                            fontWeight: FontWeight.normal,
+                          style: AppTextStyles.smallestMediumFont.copyWith(
                             color: Colors.white,
                           ),
                         ),

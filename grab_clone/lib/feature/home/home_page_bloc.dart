@@ -1,13 +1,14 @@
 import 'dart:async';
-import 'dart:ffi';
-import 'package:flutter/material.dart';
 import 'package:grab_clone/bloc/bloc.dart';
 
 class SearchText {
   final String text;
   final String drawing;
 
-  SearchText({required this.text, required this.drawing,});
+  SearchText({
+    required this.text,
+    required this.drawing,
+  });
 }
 
 class HomePageBloc extends Bloc {
@@ -43,8 +44,8 @@ class HomePageBloc extends Bloc {
     if (_currentCharIndex < _strings[_currentIndex].length) {
       _currentCharIndex++;
     } else {
-        _currentIndex = (_currentIndex + 1) % _strings.length;
-        _currentCharIndex = 0;
+      _currentIndex = (_currentIndex + 1) % _strings.length;
+      _currentCharIndex = 0;
     }
 
     Future.delayed(const Duration(milliseconds: 150), () {

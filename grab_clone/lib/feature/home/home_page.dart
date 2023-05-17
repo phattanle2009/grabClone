@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/home_page_bloc.dart';
 import 'package:grab_clone/feature/home/sections/text_field.dart';
@@ -26,7 +27,9 @@ class _HomePageState extends State<HomePage> {
   final _bloc = HomePageBloc();
 
   void handleSearchWith(String text) {
-    context.push(SearchLocationPage(searchText: text,));
+    context.push(SearchLocationPage(
+      searchText: text,
+    ));
   }
 
   Widget _buildTextfieldHeader() {
@@ -34,7 +37,11 @@ class _HomePageState extends State<HomePage> {
       stream: _bloc.result,
       builder: (context, snapshot) {
         final data = snapshot.data ?? SearchText(text: "", drawing: "");
-        return HomeTextFieldHeader(searchText: data.text, textDrawing: data.drawing, onSearch: (p0) => handleSearchWith(data.text),);
+        return HomeTextFieldHeader(
+          searchText: data.text,
+          textDrawing: data.drawing,
+          onSearch: (p0) => handleSearchWith(data.text),
+        );
       },
     );
   }
@@ -49,9 +56,8 @@ class _HomePageState extends State<HomePage> {
       width: MediaQuery.of(context).size.width,
       child: Text(
         "That's all for now!",
-        style: TextStyle(
+        style: AppTextStyles.smallerMediumFont.copyWith(
           color: AppColors.lightGray,
-          fontSize: AppDimensions.smallerFontSize,
         ),
       ),
     );

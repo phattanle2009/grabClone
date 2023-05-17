@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class MoreResultButton extends StatelessWidget {
   final String title;
@@ -21,10 +22,8 @@ class MoreResultButton extends StatelessWidget {
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: AppTextStyles.bigMediumFont.copyWith(
               color: AppColors.lighterBlue,
-              fontWeight: FontWeight.w500,
-              fontSize: AppDimensions.mediumFontSize,
             ),
           ),
         ),

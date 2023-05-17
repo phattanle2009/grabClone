@@ -9,7 +9,9 @@ import 'package:grab_clone/feature/home/view/search/search_location_navigation.d
 
 class SearchLocationPage extends StatefulWidget {
   final String searchText;
-  SearchLocationPage({required this.searchText,});
+  SearchLocationPage({
+    required this.searchText,
+  });
 
   @override
   State<SearchLocationPage> createState() => _SearchLocationPageState();
@@ -97,12 +99,14 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
                   true,
                 );
               },
-              onSubmitted: (value) => _searchLocationPageBloc.changeSuggestionSearch(
+              onSubmitted: (value) =>
+                  _searchLocationPageBloc.changeSuggestionSearch(
                 _searchLocationState,
                 value == "",
               ),
               onTappedLabel: (value) {
-                _searchLocationPageBloc.selectedLabel(_searchLocationState, value);
+                _searchLocationPageBloc.selectedLabel(
+                    _searchLocationState, value);
               },
             ),
             Expanded(

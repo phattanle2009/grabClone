@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class CardRecommendedItem extends StatelessWidget {
   final String title;
@@ -38,9 +39,7 @@ class CardRecommendedItem extends StatelessWidget {
               ),
               child: Text(
                 title,
-                style: TextStyle(
-                  fontSize: AppDimensions.smallFontSize,
-                  fontWeight: FontWeight.bold,
+                style: AppTextStyles.smallBoldFont.copyWith(
                   color: Colors.white,
                 ),
               ),

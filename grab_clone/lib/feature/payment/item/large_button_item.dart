@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 
 class LargeButtonItem extends StatelessWidget {
   const LargeButtonItem({super.key});
@@ -31,16 +32,13 @@ class LargeButtonItem extends StatelessWidget {
               children: [
                 Text(
                   "Add a card",
-                  style: TextStyle(
+                  style: AppTextStyles.smallBoldFont.copyWith(
                     color: Colors.white,
-                    fontSize: AppDimensions.smallFontSize,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   "Go cashless with a credit or debit card",
-                  style: TextStyle(
-                    fontSize: AppDimensions.smallerFontSize,
+                  style: AppTextStyles.smallMediumFont.copyWith(
                     color: Colors.white,
                   ),
                 ),

@@ -65,9 +65,7 @@ class ChallengesItem extends StatelessWidget {
                   AppDimensions.smallestHeightSpace,
                   Text(
                     subtitle,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: AppDimensions.smallerFontSize,
+                    style: AppTextStyles.smallerBoldFont.copyWith(
                       color: Colors.blue,
                     ),
                   ),

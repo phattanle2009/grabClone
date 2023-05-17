@@ -46,10 +46,8 @@ class PaymentCard extends StatelessWidget {
                     padding: EdgeInsets.all(AppDimensions.mediumSize),
                     child: Text(
                       "Activate Now",
-                      style: TextStyle(
+                      style: AppTextStyles.bigBoldFont.copyWith(
                         color: Colors.blue,
-                        fontSize: AppDimensions.mediumFontSize,
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),

@@ -61,11 +61,15 @@ class SearchLocationItem extends StatelessWidget {
         color: _getIconBackgroundColor(),
         border: Border.all(
           width: 1,
-          color: type == SuggestionSearchLocationType.destination ? AppColors.lightGray : Colors.transparent,
+          color: type == SuggestionSearchLocationType.destination
+              ? AppColors.lightGray
+              : Colors.transparent,
         ),
       ),
       child: SizedBox.square(
-        dimension: type == SuggestionSearchLocationType.destination ? AppDimensions.smallAvatarSize : AppDimensions.imageLargeSize,
+        dimension: type == SuggestionSearchLocationType.destination
+            ? AppDimensions.smallAvatarSize
+            : AppDimensions.imageLargeSize,
         child: Padding(
           padding: EdgeInsets.all(6),
           child: Image.asset(
@@ -99,9 +103,7 @@ class SearchLocationItem extends StatelessWidget {
                         address,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: AppDimensions.smallerFontSize,
+                        style: AppTextStyles.smallerMediumFont.copyWith(
                           color: AppColors.lightGray,
                         ),
                       ),

@@ -38,8 +38,7 @@ class ProfileSectionHeader extends StatelessWidget {
                   children: [
                     Text(
                       "Edit Profile",
-                      style: TextStyle(
-                        fontSize: AppDimensions.smallFontSize,
+                      style: AppTextStyles.smallBoldFont.copyWith(
                         color: AppColors.lightGray,
                       ),
                     ),

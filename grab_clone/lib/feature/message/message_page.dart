@@ -83,9 +83,7 @@ class _MessagePageState extends State<MessagePage> {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: AppDimensions.smallFontSize,
+          style: AppTextStyles.smallBoldFont.copyWith(
             color: isSelected ? Colors.white : AppColors.darkGeen,
           ),
         ),
