@@ -8,7 +8,8 @@ import 'package:grab_clone/feature/home/view/search/item/search_location_item.da
 import 'package:grab_clone/feature/home/view/search/search_location_navigation.dart';
 
 class SearchLocationPage extends StatefulWidget {
-  const SearchLocationPage({super.key});
+  final String searchText;
+  SearchLocationPage({required this.searchText,});
 
   @override
   State<SearchLocationPage> createState() => _SearchLocationPageState();
@@ -82,6 +83,7 @@ class _SearchLocationPageState extends State<SearchLocationPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SearchLocationNavigation(
+              searchText: widget.searchText,
               navigationTitle: data.searchNavigationTitle,
               isSearchSuggestion: data.isSuggestionSearch,
               isShowShadow: data.isShowShadow,

@@ -5,12 +5,14 @@ import 'package:grab_clone/constant/icon.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final double height;
+  final String searchText;
   final TextEditingController searchController;
   final Function(String) onSubmitted;
   final Function onCleared;
 
   SearchBarWidget({
     required this.height,
+    required this.searchText,
     required this.searchController,
     required this.onSubmitted,
     required this.onCleared,
@@ -22,10 +24,11 @@ class SearchBarWidget extends StatelessWidget {
         child: TextField(
           controller: searchController,
           decoration: InputDecoration(
-            hintText: 'Search...',
+            hintText: searchText.isEmpty ? 'Search...' : null,
             border: InputBorder.none,
             isCollapsed: true,
             fillColor: null,
+            labelText: searchText.isEmpty ? null : searchText,
           ),
           textAlignVertical: TextAlignVertical.center,
           onSubmitted: (value) => onSubmitted(value),

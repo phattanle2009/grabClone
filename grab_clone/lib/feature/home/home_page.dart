@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/home_page_bloc.dart';
 import 'package:grab_clone/feature/home/sections/text_field.dart';
 import 'package:grab_clone/feature/home/sections/more_section.dart';
@@ -12,6 +13,7 @@ import 'package:grab_clone/feature/home/sections/collection_section.dart';
 import 'package:grab_clone/feature/home/sections/discovering_section.dart';
 import 'package:grab_clone/feature/home/sections/grab_unlimited_section.dart';
 import 'package:grab_clone/feature/home/sections/card_collection_section.dart';
+import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,12 +25,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _bloc = HomePageBloc();
 
+  void handleSearchWith(String text) {
+    context.push(SearchLocationPage(searchText: text,));
+  }
+
   Widget _buildTextfieldHeader() {
     return StreamBuilder(
       stream: _bloc.result,
       builder: (context, snapshot) {
-        final text = snapshot.data ?? "";
-        return HomeTextFieldHeader(text: text);
+        final data = snapshot.data ?? SearchText(text: "", drawing: "");
+        return HomeTextFieldHeader(searchText: data.text, textDrawing: data.drawing, onSearch: (p0) => handleSearchWith(data.text),);
       },
     );
   }

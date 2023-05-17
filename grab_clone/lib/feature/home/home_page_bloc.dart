@@ -1,9 +1,18 @@
 import 'dart:async';
+import 'dart:ffi';
+import 'package:flutter/material.dart';
 import 'package:grab_clone/bloc/bloc.dart';
 
+class SearchText {
+  final String text;
+  final String drawing;
+
+  SearchText({required this.text, required this.drawing,});
+}
+
 class HomePageBloc extends Bloc {
-  final _controller = StreamController<String>();
-  late Stream<String> result;
+  final _controller = StreamController<SearchText>();
+  late Stream<SearchText> result;
 
   HomePageBloc() {
     bindingController();
@@ -24,12 +33,9 @@ class HomePageBloc extends Bloc {
 
   final List<String> _strings = [
     "Search the Grab!",
-    "Near me",
-    "Hot saler!!!",
-    "Ăn vặt",
-    "Bữa sáng",
-    "Bữa trưa",
-    "Bữa chiều",
+    "Bữa sáng lành mạnh",
+    "Bữa trưa xịn xò",
+    "Bữa chiều nhẹ nhàng",
     "Bữa tối 0đ",
   ];
 
@@ -37,10 +43,8 @@ class HomePageBloc extends Bloc {
     if (_currentCharIndex < _strings[_currentIndex].length) {
       _currentCharIndex++;
     } else {
-      Timer(Duration(seconds: 3), () {
         _currentIndex = (_currentIndex + 1) % _strings.length;
         _currentCharIndex = 0;
-      });
     }
 
     Future.delayed(const Duration(milliseconds: 150), () {
@@ -48,6 +52,7 @@ class HomePageBloc extends Bloc {
     });
 
     var rs = _strings[_currentIndex].substring(0, _currentCharIndex);
-    _controller.sink.add(rs);
+    var search = SearchText(text: _strings[_currentIndex], drawing: rs);
+    _controller.sink.add(search);
   }
 }

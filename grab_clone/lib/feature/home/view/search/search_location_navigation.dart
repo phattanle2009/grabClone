@@ -9,6 +9,7 @@ import 'package:grab_clone/feature/widgets/search_bar.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 
 class SearchLocationNavigation extends StatelessWidget {
+  final String searchText;
   final String navigationTitle;
   final bool isSearchSuggestion;
   final bool isShowShadow;
@@ -20,6 +21,7 @@ class SearchLocationNavigation extends StatelessWidget {
   final Function(String) onTappedLabel;
 
   SearchLocationNavigation({
+    required this.searchText,
     required this.navigationTitle,
     required this.isSearchSuggestion,
     required this.isShowShadow,
@@ -106,6 +108,7 @@ class SearchLocationNavigation extends StatelessWidget {
       duration: Duration(microseconds: 100),
       curve: Curves.easeInOutExpo,
       child: SearchBarWidget(
+        searchText: searchText,
         height: isShowSearchBar ? AppDimensions.navigationBarHeight : 0,
         searchController: searchController,
         onSubmitted: (value) => onSubmitted(value),

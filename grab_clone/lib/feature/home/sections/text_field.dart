@@ -4,13 +4,16 @@ import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/view/favourite/favourite_page.dart';
-import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomeTextFieldHeader extends StatelessWidget {
-  final String text;
+  final String searchText;
+  final String textDrawing;
+  final Function(String) onSearch;
 
   HomeTextFieldHeader({
-    required this.text,
+    required this.searchText,
+    required this.textDrawing,
+    required this.onSearch,
   });
 
   void _openFavouritePage(BuildContext context) async {
@@ -18,12 +21,12 @@ class HomeTextFieldHeader extends StatelessWidget {
   }
 
   void _openSearchPage(BuildContext context) async {
-    context.push(SearchLocationPage());
+    onSearch(searchText);
   }
 
   Widget _animatedText() {
     return Text(
-      text,
+      textDrawing,
       style: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: AppDimensions.mediumSize,
@@ -90,7 +93,10 @@ class HomeTextFieldHeader extends StatelessWidget {
                 ),
                 AppDimensions.mediumWidthSpace,
                 Expanded(
-                  child: _animatedText(),
+                  child: InkWell(
+                    onTap: () => onSearch(searchText),
+                    child: _animatedText(),
+                  ),
                 ),
                 Container(
                   color: AppColors.lightGray,
