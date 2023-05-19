@@ -14,6 +14,7 @@ import 'package:grab_clone/feature/home/sections/collection_section.dart';
 import 'package:grab_clone/feature/home/sections/discovering_section.dart';
 import 'package:grab_clone/feature/home/sections/grab_unlimited_section.dart';
 import 'package:grab_clone/feature/home/sections/card_collection_section.dart';
+import 'package:grab_clone/feature/home/view/scan/scan_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,12 +33,17 @@ class _HomePageState extends State<HomePage> {
     ));
   }
 
+  void tappedOnScan() {
+    context.push(ScanPage());
+  }
+
   Widget _buildTextfieldHeader() {
     return StreamBuilder(
       stream: _bloc.result,
       builder: (context, snapshot) {
         final data = snapshot.data ?? SearchText(text: "", drawing: "");
         return HomeTextFieldHeader(
+          onScan: () => tappedOnScan(),
           searchText: data.text,
           textDrawing: data.drawing,
           onSearch: (p0) => handleSearchWith(data.text),

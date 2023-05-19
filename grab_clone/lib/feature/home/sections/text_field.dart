@@ -10,11 +10,13 @@ class HomeTextFieldHeader extends StatelessWidget {
   final String searchText;
   final String textDrawing;
   final Function(String) onSearch;
+  final Function onScan;
 
   HomeTextFieldHeader({
     required this.searchText,
     required this.textDrawing,
     required this.onSearch,
+    required this.onScan,
   });
 
   void _openFavouritePage(BuildContext context) async {
@@ -34,33 +36,40 @@ class HomeTextFieldHeader extends StatelessWidget {
     );
   }
 
+  Widget _buildScanButton() {
+    return InkWell(
+      onTap: () => onScan(),
+      child: SizedBox.square(
+        dimension: AppDimensions.bigSize,
+        child: Container(
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(AppDimensions.smallBorder),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                spreadRadius: 1,
+                blurRadius: AppDimensions.mediumSize,
+              ),
+            ],
+          ),
+          child: Image.asset(
+            AppIcons.scanner,
+            width: AppDimensions.imageLargeSize,
+            height: AppDimensions.imageLargeSize,
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget textfield(BuildContext context) {
     return Row(
       children: [
-        SizedBox.square(
-          dimension: AppDimensions.bigSize,
-          child: Container(
-            alignment: Alignment.center,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(
-                Radius.circular(AppDimensions.smallBorder),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  spreadRadius: 1,
-                  blurRadius: AppDimensions.mediumSize,
-                ),
-              ],
-            ),
-            child: Image.asset(
-              AppIcons.scanner,
-              width: AppDimensions.imageLargeSize,
-              height: AppDimensions.imageLargeSize,
-            ),
-          ),
-        ),
+        _buildScanButton(),
         AppDimensions.smallerWidthSpace,
         Expanded(
           child: Container(
