@@ -28,6 +28,8 @@ class AppImages {
   static String get discover11 => "discover11".path;
   static String get discover12 => "discover12".path;
   static String get splash => "splash".path;
+  static String get mocaSquare1 => "moca_banner".path;
+  static String get mocaSquare2 => "moca_money".path;
 }
 
 extension AppImagesPath on String {

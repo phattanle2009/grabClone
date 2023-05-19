@@ -53,6 +53,7 @@ class AppIcons {
   static String get directionArrow => "direction_arrow".iconPath;
   static String get spoonFork => "spoon_fork".iconPath;
   static String get clock => "clock".iconPath;
+  static String get paper => "paper".iconPath;
 }
 
 extension AppIconsiconPath on String {
