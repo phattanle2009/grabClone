@@ -5,10 +5,10 @@ import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/view/scan/scan_cart_item.dart';
 
-class HeaderScanPage extends StatelessWidget {
+class ScanPageBody extends StatelessWidget {
   final String name;
 
-  HeaderScanPage({
+  ScanPageBody({
     required this.name,
   });
 
@@ -52,9 +52,14 @@ class HeaderScanPage extends StatelessWidget {
       height: AppDimensions.bannerSize,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [AppColors.lighterBlue, Colors.white],
-          begin: Alignment.bottomCenter,
-          end: Alignment.center,
+          colors: [
+            AppColors.lighterBlue.withOpacity(.8),
+            Colors.white.withOpacity(.1),
+          ],
+          begin: FractionalOffset.bottomCenter,
+          end: FractionalOffset.topCenter,
+          stops: [0.1, 0.8],
+          tileMode: TileMode.repeated,
         ),
       ),
       child: Container(

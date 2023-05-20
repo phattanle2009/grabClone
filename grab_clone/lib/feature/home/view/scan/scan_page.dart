@@ -3,7 +3,7 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
-import 'package:grab_clone/feature/home/view/scan/header_scan_page.dart';
+import 'package:grab_clone/feature/home/view/scan/scan_page_body.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({super.key});
@@ -60,7 +60,7 @@ class _ScanPageState extends State<ScanPage> {
             return notification.depth == 1;
           },
         ),
-        body: HeaderScanPage(name: "Lê Tấn Phát"),
+        body: ScanPageBody(name: "Lê Tấn Phát"),
       ),
     );
   }
