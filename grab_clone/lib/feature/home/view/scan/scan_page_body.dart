@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/image.dart';
@@ -11,6 +12,37 @@ class ScanPageBody extends StatelessWidget {
   ScanPageBody({
     required this.name,
   });
+
+  Widget _attributeText() {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text:
+                "Can't activate your wallet? Request for a refund of your Moca balance on Grab app ",
+            style: AppTextStyles.smallMediumFont.copyWith(
+              color: Colors.black87,
+            ),
+          ),
+          TextSpan(
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => print('Tapped here text'),
+            text: "hear",
+            style: AppTextStyles.bigMediumFont.copyWith(
+              color: AppColors.lighterBlue,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          TextSpan(
+            text: ".",
+            style: AppTextStyles.smallMediumFont.copyWith(
+              color: Colors.black87,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _config(BuildContext context) {
     return SizedBox(
@@ -35,10 +67,7 @@ class ScanPageBody extends StatelessWidget {
                 horizontal: AppDimensions.largeSize,
                 vertical: AppDimensions.largestSize,
               ),
-              child: Text(
-                "Can't activate your wallet? Request for a refund of your Moca balance on Grab app here.",
-                style: AppTextStyles.bigBoldFont,
-              ),
+              child: _attributeText(),
             ),
           ),
         ],
