@@ -28,7 +28,6 @@ class SearchBarWidget extends StatelessWidget {
             border: InputBorder.none,
             isCollapsed: true,
             fillColor: null,
-            labelText: searchText.isEmpty ? null : searchText,
           ),
           textAlignVertical: TextAlignVertical.center,
           onSubmitted: (value) => onSubmitted(value),

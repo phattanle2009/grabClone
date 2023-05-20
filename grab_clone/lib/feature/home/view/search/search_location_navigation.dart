@@ -104,6 +104,7 @@ class SearchLocationNavigation extends StatelessWidget {
   }
 
   Widget _buildSearchBar() {
+    searchController.text = searchText;
     return AnimatedContainer(
       duration: Duration(microseconds: 100),
       curve: Curves.easeInOutExpo,
