@@ -16,6 +16,8 @@ import 'package:grab_clone/feature/home/sections/grab_unlimited_section.dart';
 import 'package:grab_clone/feature/home/sections/card_collection_section.dart';
 import 'package:grab_clone/feature/home/view/scan/scan_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
+import 'package:grab_clone/feature/payment/payment_page.dart';
+import 'package:grab_clone/tabbar/tabbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,6 +37,18 @@ class _HomePageState extends State<HomePage> {
 
   void tappedOnScan() {
     context.push(ScanPage());
+  }
+
+  void tappedOnPayment() {
+    // context.push(ScanPage());
+  }
+
+  void tappedOnVerify() {
+    // context.push(ScanPage());
+  }
+
+  void tappedOnPoint() {
+    // context.push(ScanPage());
   }
 
   Widget _buildTextfieldHeader() {
@@ -83,7 +97,10 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   _buildTextfieldHeader(),
                   CollectionSection(),
-                  CardCollectionSection(),
+                  CardCollectionSection(
+                      onTapPoint: () => tappedOnPoint(),
+                      onTapVerify: () => tappedOnVerify(),
+                      onTapPayment: () => tappedOnPayment()),
                   OrderNowSection(),
                   SuggestionSection(
                     sectionHeader: "Restaurants you may like",
