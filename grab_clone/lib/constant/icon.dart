@@ -54,6 +54,9 @@ class AppIcons {
   static String get spoonFork => "spoon_fork".iconPath;
   static String get clock => "clock".iconPath;
   static String get paper => "paper".iconPath;
+  static String get grabCircleBackground => "grab_circle_background".iconPath;
+  static String get securityCircleBackground =>
+      "security_circle_background".iconPath;
 }
 
 extension AppIconsiconPath on String {

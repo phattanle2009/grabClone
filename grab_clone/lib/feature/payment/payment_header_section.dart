@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/payment/item/payment_card.dart';
 
 class PaymentHeaderSection extends StatelessWidget {
-  const PaymentHeaderSection({super.key});
+  final Function onTapSetting;
+
+  PaymentHeaderSection({
+    required this.onTapSetting,
+  });
 
   Widget _config(BuildContext context) {
     return Stack(
@@ -31,7 +35,10 @@ class PaymentHeaderSection extends StatelessWidget {
                     ),
                     SizedBox.square(
                       dimension: AppDimensions.imageMediumSize,
-                      child: Image.asset(AppIcons.setting),
+                      child: InkWell(
+                        onTap: () => onTapSetting(),
+                        child: Image.asset(AppIcons.setting),
+                      ),
                     ),
                   ],
                 ),
