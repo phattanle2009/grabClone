@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/widgets/more_result.dart';
 import 'package:grab_clone/feature/widgets/header_title.dart';
 import 'package:grab_clone/feature/home/view/search/item/search_restaurant_item.dart';
@@ -38,7 +39,10 @@ class SearchRestaurantSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppDimensions.largeHeightSpace,
-          HeaderTitle(sectionHeader: "Restaurants"),
+          HeaderTitle(
+            sectionHeader: "Restaurants",
+            style: AppTextStyles.biggerBoldFont,
+          ),
           AppDimensions.mediumHeightSpace,
           _buildRestaurants(),
           AppDimensions.mediumHeightSpace,

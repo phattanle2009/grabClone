@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/widgets/header_title.dart';
 import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
 import 'package:grab_clone/feature/widgets/more_result.dart';
@@ -33,7 +34,10 @@ class SearchDestinationSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppDimensions.largeHeightSpace,
-          HeaderTitle(sectionHeader: "Destinations"),
+          HeaderTitle(
+            sectionHeader: "Destinations",
+            style: AppTextStyles.biggerBoldFont,
+          ),
           AppDimensions.mediumHeightSpace,
           _buildDestinations(),
           AppDimensions.mediumHeightSpace,
@@ -41,7 +45,9 @@ class SearchDestinationSection extends StatelessWidget {
             height: 1,
             color: AppColors.lighterGrey,
           ),
-          MoreResultButton(title: "More Destinations"),
+          MoreResultButton(
+            title: "More Destinations",
+          ),
         ],
       ),
     );

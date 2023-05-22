@@ -16,8 +16,6 @@ import 'package:grab_clone/feature/home/sections/grab_unlimited_section.dart';
 import 'package:grab_clone/feature/home/sections/card_collection_section.dart';
 import 'package:grab_clone/feature/home/view/scan/scan_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
-import 'package:grab_clone/feature/payment/payment_page.dart';
-import 'package:grab_clone/tabbar/tabbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
