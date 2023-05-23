@@ -61,6 +61,20 @@ class _AccountPageState extends State<AccountPage> {
     });
   }
 
+  void _openDetail(MenuType type) {
+    switch (type) {
+      case MenuType.rewardMember:
+        context.push(RewardMemberPage());
+        break;
+      case MenuType.setting:
+        context.push(AccountSettingPage());
+        break;
+      default:
+        print(type);
+        return;
+    }
+  }
+
   Widget _config() {
     var list = Mock.menuItems;
     return ListView.builder(
@@ -74,10 +88,11 @@ class _AccountPageState extends State<AccountPage> {
           default:
             return ProfileItem(
               title: list[index - 1].title,
-              isHeaderTitle: list[index - 1].isHeaderTitle,
               label: list[index - 1].label,
               labelColor: list[index - 1].labelColor,
+              isHeaderTitle: list[index - 1].isHeaderTitle,
               leadingIconName: list[index - 1].leadingIconName,
+              onTap: () => _openDetail(list[index - 1].menuType),
               backgroundColorForLabel: list[index - 1].backgroundColorForLabel,
             );
         }

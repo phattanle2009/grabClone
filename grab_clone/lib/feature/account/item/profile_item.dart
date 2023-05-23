@@ -3,21 +3,24 @@ import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+// import 'package:grab_clone/feature/account/account_page.dart';
 
 class ProfileItem extends StatelessWidget {
   final String title;
-  final bool isHeaderTitle;
   final String? label;
-  final String? leadingIconName;
+  final Function onTap;
   final Color? labelColor;
+  final bool isHeaderTitle;
+  final String? leadingIconName;
   final Color? backgroundColorForLabel;
 
   ProfileItem({
     required this.title,
-    this.isHeaderTitle = false,
+    required this.onTap,
     this.label = null,
-    this.leadingIconName = null,
     this.labelColor = null,
+    this.isHeaderTitle = false,
+    this.leadingIconName = null,
     this.backgroundColorForLabel = null,
   });
 
@@ -32,7 +35,8 @@ class ProfileItem extends StatelessWidget {
   }
 
   Widget _config(BuildContext context) {
-    return Container(
+    return InkWell(
+      onTap: () => onTap(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -71,8 +75,12 @@ class ProfileItem extends StatelessWidget {
                         label!,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: backgroundColorForLabel == null ? AppDimensions.smallerFontSize : AppDimensions.smallestFontSize,
-                          fontWeight: backgroundColorForLabel == null ? FontWeight.normal : FontWeight.bold,
+                          fontSize: backgroundColorForLabel == null
+                              ? AppDimensions.smallerFontSize
+                              : AppDimensions.smallestFontSize,
+                          fontWeight: backgroundColorForLabel == null
+                              ? FontWeight.normal
+                              : FontWeight.bold,
                           color: labelColor ?? Colors.white,
                         ),
                       ),

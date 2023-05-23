@@ -1,6 +1,7 @@
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
+import 'package:grab_clone/feature/account/account_page.dart';
 import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
 import 'package:grab_clone/model/menu_model.dart';
 import 'package:grab_clone/model/notification_model.dart';
@@ -191,77 +192,97 @@ class Mock {
     MenuModel(
       title: "For more value",
       isHeaderTitle: true,
+      menuType: MenuType.none,
     ),
     MenuModel(
       title: "Rewards",
+      menuType: MenuType.reward,
     ),
     MenuModel(
       title: "Subscriptions",
       label: "New",
       backgroundColorForLabel: AppColors.red,
+      menuType: MenuType.subcription,
     ),
     MenuModel(
       title: "Challenges",
+      menuType: MenuType.challenge,
     ),
     MenuModel(
       title: "Referrals",
       label: "New",
       backgroundColorForLabel: AppColors.red,
+      menuType: MenuType.referral,
     ),
     MenuModel(
       title: "My account",
       isHeaderTitle: true,
+      menuType: MenuType.none,
     ),
     MenuModel(
       title: "Rewards Member",
       leadingIconName: AppIcons.queen,
       label: "0 Points",
       labelColor: AppColors.lightGray,
+      menuType: MenuType.rewardMember,
     ),
     MenuModel(
       title: "Favourites",
       label: "New",
       backgroundColorForLabel: AppColors.red,
+      menuType: MenuType.favourite,
     ),
     MenuModel(
       title: "Payment Methods",
+      menuType: MenuType.paymentMethod,
     ),
     MenuModel(
       title: "Scheduled",
+      menuType: MenuType.schedule,
     ),
     MenuModel(
       title: "Saved Places",
+      menuType: MenuType.savePlace,
     ),
     MenuModel(
       title: "Emergency Contacts",
+      menuType: MenuType.emergencyContact,
     ),
     MenuModel(
       title: "Business Account",
+      menuType: MenuType.businessAccount,
     ),
     MenuModel(
       title: "General",
       isHeaderTitle: true,
+      menuType: MenuType.none,
     ),
     MenuModel(
       title: "Help Centre",
+      menuType: MenuType.helpCentre,
     ),
     MenuModel(
       title: "Settings",
+      menuType: MenuType.setting,
     ),
     MenuModel(
       title: "Share Feedback",
+      menuType: MenuType.shareFeedback,
     ),
     MenuModel(
       title: "Opportunities",
       isHeaderTitle: true,
+      menuType: MenuType.none,
     ),
     MenuModel(
       title: "Support the Environment",
       label: "New",
       backgroundColorForLabel: AppColors.red,
+      menuType: MenuType.supportEnv,
     ),
     MenuModel(
       title: "Drive With Grab",
+      menuType: MenuType.drive,
     ),
   ];
 
@@ -284,17 +305,20 @@ class Mock {
     ),
     SuggestionSearchModel(
       title: "781 Âu Cơ",
-      detailAddress: "781 Âu Cơ, P.Tân Thành, Q.Tân Phú, Hồ Chí Minh, 700000, Việt Nam",
+      detailAddress:
+          "781 Âu Cơ, P.Tân Thành, Q.Tân Phú, Hồ Chí Minh, 700000, Việt Nam",
       type: SuggestionSearchLocationType.recently,
     ),
     SuggestionSearchModel(
       title: "65/7 Street No.14",
-      detailAddress: "65/7 Đường số 14, P.11, Q.Gò Vấp, Hồ Chí Minh, 700000, VietNam",
+      detailAddress:
+          "65/7 Đường số 14, P.11, Q.Gò Vấp, Hồ Chí Minh, 700000, VietNam",
       type: SuggestionSearchLocationType.recently,
     ),
     SuggestionSearchModel(
       title: "West Coach Station",
-      detailAddress: "295 Kinh Dương Vương, P.An Lạc, Q.Bình Tân, Hồ Chí Minh, 700000, VietNam",
+      detailAddress:
+          "295 Kinh Dương Vương, P.An Lạc, Q.Bình Tân, Hồ Chí Minh, 700000, VietNam",
       type: SuggestionSearchLocationType.recently,
     ),
   ];
@@ -302,7 +326,8 @@ class Mock {
   static List<SuggestionSearchModel> destinationItems = [
     SuggestionSearchModel(
       title: "Công ty TNHH Nakano Precision - Nakano Precision Co.,LTD",
-      detailAddress: "Lô III-3B Đường 12, Nhóm Công nghiệp III, KCN Linh Xuân, Thành Phố Thủ Đức",
+      detailAddress:
+          "Lô III-3B Đường 12, Nhóm Công nghiệp III, KCN Linh Xuân, Thành Phố Thủ Đức",
       type: SuggestionSearchLocationType.destination,
     ),
     SuggestionSearchModel(
@@ -312,7 +337,8 @@ class Mock {
     ),
     SuggestionSearchModel(
       title: "Shop Game Nakata - Nakata Game Shop",
-      detailAddress: "7/12 Nam Kỳ Khởi Nghĩa, P.Võ Thị Sáu, Q.3, Hồ Chí Minh, 700000, VietNam",
+      detailAddress:
+          "7/12 Nam Kỳ Khởi Nghĩa, P.Võ Thị Sáu, Q.3, Hồ Chí Minh, 700000, VietNam",
       type: SuggestionSearchLocationType.destination,
     ),
     SuggestionSearchModel(
@@ -322,5 +348,10 @@ class Mock {
     ),
   ];
 
-  static List<String> tagItems = ["All", "Destinations", "Restaurant", "Groceries and supplies"];
+  static List<String> tagItems = [
+    "All",
+    "Destinations",
+    "Restaurant",
+    "Groceries and supplies"
+  ];
 }
