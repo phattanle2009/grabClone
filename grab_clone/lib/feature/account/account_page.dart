@@ -2,16 +2,65 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/account/item/profile_item.dart';
+import 'package:grab_clone/extension/build_context_extension.dart';
+import 'package:grab_clone/feature/account/reward_member_page.dart';
+import 'package:grab_clone/feature/account/account_setting_page.dart';
 import 'package:grab_clone/feature/account/item/profile_section_header.dart';
 
+enum MenuType {
+  none,
+  drive,
+  reward,
+  setting,
+  schedule,
+  referral,
+  challenge,
+  savePlace,
+  favourite,
+  supportEnv,
+  helpCentre,
+  subcription,
+  rewardMember,
+  shareFeedback,
+  paymentMethod,
+  businessAccount,
+  emergencyContact,
+}
+
 class AccountPage extends StatefulWidget {
-  const AccountPage({super.key});
+  final MenuType openMenuType;
+
+  const AccountPage({
+    super.key,
+    required this.openMenuType,
+  });
 
   @override
   State<AccountPage> createState() => _AccountPageState();
 }
 
 class _AccountPageState extends State<AccountPage> {
+  @override
+  void initState() {
+    _viewDidLoad();
+    super.initState();
+  }
+
+  void _viewDidLoad() {
+    Future.delayed(Duration(milliseconds: 500), () {
+      switch (widget.openMenuType) {
+        case MenuType.rewardMember:
+          context.push(RewardMemberPage());
+          break;
+        case MenuType.setting:
+          context.push(AccountSettingPage());
+          break;
+        default:
+          return;
+      }
+    });
+  }
+
   Widget _config() {
     var list = Mock.menuItems;
     return ListView.builder(

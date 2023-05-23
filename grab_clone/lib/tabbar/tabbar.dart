@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/tabbar/tabbar_bloc.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/feature/home/home_page.dart';
 import 'package:grab_clone/feature/payment/payment_page.dart';
@@ -17,27 +18,12 @@ class DashboardNavigator extends StatefulWidget {
 }
 
 class _DashboardNavigatorState extends State<DashboardNavigator> {
-  int _pageIndex = 0;
-  late List<Widget> _page;
+  final _bloc = TabbarBloc();
 
   @override
-  void didChangeDependencies() {
-    _page = <Widget>[
-      HomePage(
-        onPressedPoint: (p0) => _onItemTapped(4),
-        onPressedPayment: () => _onItemTapped(2),
-        onPressedVerifyMail: (p0) => _onItemTapped(4),
-      ),
-      const ActivityPage(),
-      const PaymentPage(),
-      const MessagePage(),
-      const AccountPage(),
-    ];
-    super.didChangeDependencies();
-  }
-
-  void _onItemTapped(int index) {
-    setState(() => _pageIndex = index);
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
   }
 
   BottomNavigationBarItem _buildItemNavigator(
@@ -63,7 +49,7 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
     );
   }
 
-  Widget _buildBottomNavigator() {
+  Widget _buildBottomNavigator(int index) {
     return ClipRRect(
       child: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
@@ -95,7 +81,7 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
         ],
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
-        currentIndex: _pageIndex,
+        currentIndex: index,
         unselectedItemColor: AppColors.lightGray,
         selectedItemColor: Colors.green,
         selectedLabelStyle: AppTextStyles.smallestBoldFont.copyWith(
@@ -104,7 +90,7 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
         unselectedLabelStyle: AppTextStyles.smallestMediumFont.copyWith(
           color: AppColors.lightGray,
         ),
-        onTap: _onItemTapped,
+        onTap: (index) => _bloc.changeTabbar(index: index),
         backgroundColor: Colors.white,
       ),
     );
@@ -112,9 +98,27 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _page[_pageIndex],
-      bottomNavigationBar: _buildBottomNavigator(),
+    return StreamBuilder<int>(
+      stream: _bloc.aResult,
+      builder: (context, snapshot) {
+        final data = snapshot.data ?? 0;
+        return Scaffold(
+          body: <Widget>[
+            HomePage(
+              onPressedPoint: () =>
+                  _bloc.changeTabbar(index: 4, argument: MenuType.rewardMember),
+              onPressedPayment: () => _bloc.changeTabbar(index: 2),
+              onPressedVerifyMail: () =>
+                  _bloc.changeTabbar(index: 4, argument: MenuType.setting),
+            ),
+            const ActivityPage(),
+            const PaymentPage(),
+            const MessagePage(),
+            AccountPage(openMenuType: _bloc.arg),
+          ][data],
+          bottomNavigationBar: _buildBottomNavigator(data),
+        );
+      },
     );
   }
 }

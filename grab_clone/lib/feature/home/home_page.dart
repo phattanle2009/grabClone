@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/text.dart';
-import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/home_page_bloc.dart';
+import 'package:grab_clone/feature/home/view/scan/scan_page.dart';
 import 'package:grab_clone/feature/home/sections/text_field.dart';
+import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/home/sections/more_section.dart';
 import 'package:grab_clone/feature/home/sections/order_now_section.dart';
 import 'package:grab_clone/feature/home/sections/suggestion_section.dart';
@@ -14,13 +15,12 @@ import 'package:grab_clone/feature/home/sections/collection_section.dart';
 import 'package:grab_clone/feature/home/sections/discovering_section.dart';
 import 'package:grab_clone/feature/home/sections/grab_unlimited_section.dart';
 import 'package:grab_clone/feature/home/sections/card_collection_section.dart';
-import 'package:grab_clone/feature/home/view/scan/scan_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomePage extends StatefulWidget {
   final Function onPressedPayment;
-  final Function(String) onPressedPoint;
-  final Function(String) onPressedVerifyMail;
+  final Function onPressedPoint;
+  final Function onPressedVerifyMail;
 
   const HomePage({
     super.key,
@@ -51,11 +51,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void tappedOnVerify() {
-    // widget.onPressedVerifyMail();
+    widget.onPressedVerifyMail();
   }
 
   void tappedOnPoint() {
-    // context.push(ScanPage());
+    widget.onPressedPoint();
   }
 
   Widget _buildTextfieldHeader() {
@@ -105,9 +105,10 @@ class _HomePageState extends State<HomePage> {
                   _buildTextfieldHeader(),
                   CollectionSection(),
                   CardCollectionSection(
-                      onTapPoint: () => tappedOnPoint(),
-                      onTapVerify: () => tappedOnVerify(),
-                      onTapPayment: () => tappedOnPayment()),
+                    onTapPoint: () => tappedOnPoint(),
+                    onTapVerify: () => tappedOnVerify(),
+                    onTapPayment: () => tappedOnPayment(),
+                  ),
                   OrderNowSection(),
                   SuggestionSection(
                     sectionHeader: "Restaurants you may like",
