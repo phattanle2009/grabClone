@@ -18,7 +18,16 @@ import 'package:grab_clone/feature/home/view/scan/scan_page.dart';
 import 'package:grab_clone/feature/home/view/search/search_location_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Function onPressedPayment;
+  final Function(String) onPressedPoint;
+  final Function(String) onPressedVerifyMail;
+
+  const HomePage({
+    super.key,
+    required this.onPressedPoint,
+    required this.onPressedPayment,
+    required this.onPressedVerifyMail,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -38,11 +47,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void tappedOnPayment() {
-    // context.push(ScanPage());
+    widget.onPressedPayment();
   }
 
   void tappedOnVerify() {
-    // context.push(ScanPage());
+    // widget.onPressedVerifyMail();
   }
 
   void tappedOnPoint() {

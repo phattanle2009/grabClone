@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/icon.dart';
+import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
-import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/feature/home/home_page.dart';
 import 'package:grab_clone/feature/payment/payment_page.dart';
 import 'package:grab_clone/feature/message/message_page.dart';
@@ -18,14 +18,23 @@ class DashboardNavigator extends StatefulWidget {
 
 class _DashboardNavigatorState extends State<DashboardNavigator> {
   int _pageIndex = 0;
+  late List<Widget> _page;
 
-  static final List<Widget> _page = <Widget>[
-    const HomePage(),
-    const ActivityPage(),
-    const PaymentPage(),
-    const MessagePage(),
-    const AccountPage(),
-  ];
+  @override
+  void didChangeDependencies() {
+    _page = <Widget>[
+      HomePage(
+        onPressedPoint: (p0) => _onItemTapped(4),
+        onPressedPayment: () => _onItemTapped(2),
+        onPressedVerifyMail: (p0) => _onItemTapped(4),
+      ),
+      const ActivityPage(),
+      const PaymentPage(),
+      const MessagePage(),
+      const AccountPage(),
+    ];
+    super.didChangeDependencies();
+  }
 
   void _onItemTapped(int index) {
     setState(() => _pageIndex = index);
