@@ -3,6 +3,7 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/feature/account/account_page.dart';
 import 'package:grab_clone/feature/home/view/search/item/search_location_item.dart';
+import 'package:grab_clone/model/garb_unlimitted_model.dart';
 import 'package:grab_clone/model/menu_model.dart';
 import 'package:grab_clone/model/notification_model.dart';
 import 'package:grab_clone/model/suggestion_model.dart';
@@ -353,5 +354,64 @@ class Mock {
     "Destinations",
     "Restaurant",
     "Groceries and supplies"
+  ];
+
+  static List<GrabUnlimitedModel> grabUnlimitedItems = [
+    GrabUnlimitedModel(
+      title: "Freeship 15.000đ mỗi đơn GrabFood",
+      subtitle: "Tìm hiểu thêm",
+      imageNamed: AppImages.grabUnlimited1,
+      discountLabel: "From 1.000d / month ",
+      discountPrice: "49.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "Đăng ký ngay chỉ 1.000đ",
+      subtitle: "Giá gốc 49.000đ",
+      imageNamed: AppImages.grabUnlimited2,
+      discountLabel: "From 10.000d / month ",
+      discountPrice: "99.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "Đăng ký ngay với Grab",
+      subtitle: "Giá 99.000đ",
+      imageNamed: AppImages.discover12,
+      discountLabel: "From 50.000d / month ",
+      discountPrice: "199.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "GrabUnlimited",
+      subtitle: "Super savings more than 1.700.000d/month",
+      imageNamed: AppImages.discover2,
+      discountLabel: "From 1.000d / month ",
+      discountPrice: "99.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "Gói Hội Viên",
+      subtitle: "Saving 1.000.000đ",
+      imageNamed: AppImages.discover10,
+      discountLabel: "From 1.000d / month ",
+      discountPrice: "99.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "Triệt tiêu nắng nóng",
+      subtitle: "Nhiệt độ bao nhiêu giảm bấy nhiêu",
+      imageNamed: AppImages.discover7,
+      discountLabel: "Giảm giá tối đa ",
+      discountPrice: "49.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "Ngồi mát Grab giao",
+      subtitle: "Giải khát cùng MayCha",
+      imageNamed: AppImages.discover8,
+      discountLabel: "Ưu đãi ",
+      discountPrice: "29.000đ",
+    ),
+    GrabUnlimitedModel(
+      title: "Gói ưu đãi Moca",
+      subtitle: "Hoàn tiền 100.000đ",
+      imageNamed: AppImages.discover11,
+      discountLabel: "Giảm giá các món khác ",
+      discountPrice: "99.000đ",
+    ),
   ];
 }
