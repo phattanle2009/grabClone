@@ -6,6 +6,7 @@ import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/account/reward_member_page.dart';
 import 'package:grab_clone/feature/account/account_setting_page.dart';
 import 'package:grab_clone/feature/account/item/profile_section_header.dart';
+import 'package:grab_clone/feature/account/schedule_bottom_modal.dart';
 import 'package:grab_clone/feature/account/subscription_page.dart';
 import 'package:grab_clone/feature/home/view/favourite/favourite_page.dart';
 
@@ -65,14 +66,17 @@ class _AccountPageState extends State<AccountPage> {
 
   void _openDetail(MenuType type) {
     switch (type) {
-      case MenuType.favourite:
-        context.push(FavouritePage());
-        break;
       case MenuType.subcription:
         context.push(SubscriptionPage());
         break;
       case MenuType.rewardMember:
         context.push(RewardMemberPage());
+        break;
+      case MenuType.favourite:
+        context.push(FavouritePage());
+        break;
+      case MenuType.schedule:
+        ScheduleBottomModal.showBottomModal(context);
         break;
       case MenuType.setting:
         context.push(AccountSettingPage());

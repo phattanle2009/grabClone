@@ -31,6 +31,7 @@ class AppImages {
   static String get activityEmpty => "activity_empty".path;
   static String get grabUnlimited1 => "grab_unlimited_1".path;
   static String get grabUnlimited2 => "grab_unlimited_2".path;
+  static String get scheduleBannerModal => "schedule_banner_modal".path;
 }
 
 extension AppImagesPath on String {
