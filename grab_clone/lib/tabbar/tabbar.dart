@@ -114,7 +114,10 @@ class _DashboardNavigatorState extends State<DashboardNavigator> {
             const ActivityPage(),
             const PaymentPage(),
             const MessagePage(),
-            AccountPage(openMenuType: _bloc.arg),
+            AccountPage(
+              openMenuType: _bloc.arg,
+              openActivity: () => _bloc.changeTabbar(index: 1),
+            ),
           ][data],
           bottomNavigationBar: _buildBottomNavigator(data),
         );

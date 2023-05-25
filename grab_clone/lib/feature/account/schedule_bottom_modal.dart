@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/image.dart';
 import 'package:grab_clone/constant/text.dart';
+import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/widgets/primary_button.dart';
 
 class ScheduleBottomModal {
-  static void showBottomModal(BuildContext context) {
+  static void showBottomModal(BuildContext context, Function onTap) {
     showModalBottomSheet<void>(
       context: context,
       builder: (BuildContext context) {
@@ -15,9 +16,7 @@ class ScheduleBottomModal {
           ),
           color: Colors.white,
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Image.asset(
                 AppImages.scheduleBannerModal,
@@ -40,6 +39,12 @@ class ScheduleBottomModal {
                 height: AppDimensions.customButtonHeight,
                 width: MediaQuery.of(context).size.width -
                     AppDimensions.mediumSize * 2,
+                onTap: () {
+                  context.pop();
+                  Future.delayed(Duration(milliseconds: 500), () {
+                    onTap();
+                  });
+                },
               ),
               AppDimensions.mediumHeightSpace,
             ],

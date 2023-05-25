@@ -7,19 +7,19 @@ class PrimaryButtonWidget extends StatelessWidget {
   final double width;
   final double height;
   final double borderRadius;
+  final Function onTap;
 
   PrimaryButtonWidget({
     required this.title,
     required this.width,
     required this.height,
     required this.borderRadius,
+    required this.onTap,
   });
 
   Widget _buildButton() {
     return InkWell(
-      onTap: () {
-        print(title);
-      },
+      onTap: () => onTap(),
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.green,

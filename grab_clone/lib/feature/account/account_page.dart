@@ -32,10 +32,12 @@ enum MenuType {
 
 class AccountPage extends StatefulWidget {
   final MenuType openMenuType;
+  final Function openActivity;
 
   const AccountPage({
     super.key,
     required this.openMenuType,
+    required this.openActivity,
   });
 
   @override
@@ -76,7 +78,10 @@ class _AccountPageState extends State<AccountPage> {
         context.push(FavouritePage());
         break;
       case MenuType.schedule:
-        ScheduleBottomModal.showBottomModal(context);
+        ScheduleBottomModal.showBottomModal(
+          context,
+          () => {widget.openActivity()},
+        );
         break;
       case MenuType.setting:
         context.push(AccountSettingPage());
