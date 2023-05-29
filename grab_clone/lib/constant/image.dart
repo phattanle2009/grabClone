@@ -29,6 +29,7 @@ class AppImages {
   static String get mocaSquare2 => "moca_money".path;
   static String get mocaSquare1 => "moca_banner".path;
   static String get activityEmpty => "activity_empty".path;
+  static String get emergencyEmpty => "emergency_empty".path;
   static String get grabUnlimited1 => "grab_unlimited_1".path;
   static String get grabUnlimited2 => "grab_unlimited_2".path;
   static String get scheduleBannerModal => "schedule_banner_modal".path;

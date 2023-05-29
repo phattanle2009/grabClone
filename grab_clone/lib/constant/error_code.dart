@@ -1,0 +1,1 @@
+const int socketErrorCode = 1001;
