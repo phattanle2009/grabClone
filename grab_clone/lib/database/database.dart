@@ -48,17 +48,6 @@ class DBProvider {
     }
   }
 
-  blockOrUnblock(ContactModel contact) async {
-    final db = await database;
-    ContactModel blocked = ContactModel(
-        id: contact.id,
-        fullName: contact.fullName,
-        phoneNumber: contact.phoneNumber);
-    var res = await db.update("Contact", blocked.toMap(),
-        where: "id = ?", whereArgs: [contact.id]);
-    return res;
-  }
-
   updateContact(ContactModel newContact) async {
     final db = await database;
     var res = await db.update("Contact", newContact.toMap(),
@@ -70,26 +59,6 @@ class DBProvider {
     final db = await database;
     var res = await db.query("Contact", where: "id = ?", whereArgs: [id]);
     return res.isNotEmpty ? ContactModel.fromMap(res.first) : null;
-  }
-
-  Future<List<ContactModel>> getBlockedContacts() async {
-    final db = await database;
-
-    print("works");
-    // var res = await db.rawQuery("SELECT * FROM Contact WHERE blocked=1");
-    var res = await db.query("Contact", where: "blocked = ? ", whereArgs: [1]);
-
-    List<ContactModel> list =
-        res.isNotEmpty ? res.map((c) => ContactModel.fromMap(c)).toList() : [];
-    return list;
-  }
-
-  Future<List<ContactModel>> getAllContacts() async {
-    final db = await database;
-    var res = await db.query("Contact");
-    List<ContactModel> list =
-        res.isNotEmpty ? res.map((c) => ContactModel.fromMap(c)).toList() : [];
-    return list;
   }
 
   deleteContact(int id) async {
