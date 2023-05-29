@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grab_clone/common/mock.dart';
 import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/feature/account/emergency_contact_page.dart';
 import 'package:grab_clone/feature/account/item/profile_item.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/account/reward_member_page.dart';
@@ -82,6 +83,9 @@ class _AccountPageState extends State<AccountPage> {
           context,
           () => {widget.openActivity()},
         );
+        break;
+      case MenuType.emergencyContact:
+        context.push(EmergencyContactPage());
         break;
       case MenuType.setting:
         context.push(AccountSettingPage());
