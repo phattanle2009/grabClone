@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:grab_clone/constant/colors.dart';
 import 'package:grab_clone/constant/dimensions.dart';
@@ -5,6 +6,7 @@ import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
 import 'package:grab_clone/extension/build_context_extension.dart';
 import 'package:grab_clone/feature/widgets/primary_button.dart';
+import 'dart:math' as math;
 
 class EmergencyAddContactPage extends StatefulWidget {
   const EmergencyAddContactPage({super.key});
@@ -18,16 +20,16 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
   Widget _buildBody(BuildContext context) {
     return Container(
       color: AppColors.background,
+      padding: EdgeInsets.only(top: AppDimensions.largeSize),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _buildAddContacts(),
                 AppDimensions.mediumHeightSpace,
-                
+                _buildInfo(),
               ],
             ),
           ),
@@ -64,7 +66,64 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
   }
 
   Widget _buildInfo() {
-    return 
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(AppDimensions.mediumSize),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Name of contact person',
+            ),
+          ),
+          AppDimensions.mediumHeightSpace,
+          Row(
+            children: [
+              Container(
+                height: AppDimensions.customButtonHeight + 9,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: AppColors.lightGray),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(AppDimensions.smallerBorder),
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    CountryCodePicker(
+                      initialSelection: 'Việt Nam',
+                      favorite: ['Việt Nam'],
+                      onChanged: (value) {
+                        print(value.dialCode);
+                        print(value.name);
+                      },
+                    ),
+                    Transform.rotate(
+                      angle: math.pi / 2,
+                      child: Image.asset(
+                        AppIcons.rightArrow,
+                        width: AppDimensions.imageSmallSize,
+                      ),
+                    ),
+                    AppDimensions.smallWidthSpace,
+                  ],
+                ),
+              ),
+              AppDimensions.mediumWidthSpace,
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Mobile number',
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _buildBottomButton(BuildContext context) {
