@@ -14,60 +14,55 @@ class DBProvider {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    // if _database is null we instantiate it
     _database = await initDB();
     return _database!;
   }
 
   initDB() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String path = join(documentsDirectory.path, "localDB.db");
+    String path = join(documentsDirectory.path, 'localDB.db');
     return await openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {
-      await db.execute("CREATE TABLE Contact ("
-          "id INTEGER PRIMARY KEY,"
-          "full_name TEXT,"
-          "phone_number TEXT,"
-          ")");
+      await db.execute('CREATE TABLE Contact ('
+          'id INTEGER PRIMARY KEY,'
+          'full_name TEXT,'
+          'phone_number TEXT'
+          ')');
     });
   }
 
   newContact(ContactModel newContact) async {
     final db = await database;
-    //get the biggest id in the table
-    var table = await db.rawQuery("SELECT MAX(id)+1 as id FROM Contact");
-    if (table.first["id"] != null) {
-      var id = table.first["id"];
-      //insert to the table using the new id
-      var raw = await db.rawInsert(
-        "INSERT Into Contact (id,full_name,phone_number)"
-        " VALUES (?,?,?)",
-        [id, newContact.fullName, newContact.phoneNumber],
-      );
-      return raw;
-    }
+    var table = await db.rawQuery('SELECT MAX(id)+1 as id FROM Contact');
+    var id = table.first['id'] ?? 1;
+    var raw = await db.rawInsert(
+      'INSERT Into Contact (id,full_name,phone_number)'
+      ' VALUES (?,?,?)',
+      [id, newContact.fullName, newContact.phoneNumber],
+    );
+    return raw;
   }
 
   updateContact(ContactModel newContact) async {
     final db = await database;
-    var res = await db.update("Contact", newContact.toMap(),
-        where: "id = ?", whereArgs: [newContact.id]);
+    var res = await db.update('Contact', newContact.toMap(),
+        where: 'id = ?', whereArgs: [newContact.id]);
     return res;
   }
 
   getContact(int id) async {
     final db = await database;
-    var res = await db.query("Contact", where: "id = ?", whereArgs: [id]);
+    var res = await db.query('Contact', where: 'id = ?', whereArgs: [id]);
     return res.isNotEmpty ? ContactModel.fromMap(res.first) : null;
   }
 
   deleteContact(int id) async {
     final db = await database;
-    return db.delete("Contact", where: "id = ?", whereArgs: [id]);
+    return db.delete('Contact', where: 'id = ?', whereArgs: [id]);
   }
 
   deleteAll() async {
     final db = await database;
-    db.rawDelete("Delete * from Contact");
+    db.rawDelete('Delete * from Contact');
   }
 }

@@ -29,38 +29,73 @@ class _EmergencyContactPageState extends State<EmergencyContactPage> {
     return StreamBuilder(
       stream: _bloc.result,
       builder: (context, snapshot) {
-        final data = snapshot.data ?? [];
-        if (data.isEmpty) {
+        final list = snapshot.data ?? [];
+        if (list.isEmpty) {
           return _buildEmptyBody(context);
         } else {
-          /*
-          ListView.builder(
-      itemCount: _bloc.result.length,
-      padding: const EdgeInsets.symmetric(horizontal: AppDimensions.mediumSize),
-      scrollDirection: Axis.vertical,
-      itemBuilder: (BuildContext context, int index) {
-        switch (index) {
-          case 0:
-            return ProfileSectionHeader();
-          default:
-            return ProfileItem(
-              title: list[index - 1].title,
-              label: list[index - 1].label,
-              labelColor: list[index - 1].labelColor,
-              isHeaderTitle: list[index - 1].isHeaderTitle,
-              leadingIconName: list[index - 1].leadingIconName,
-              onTap: () => _openDetail(list[index - 1].menuType),
-              backgroundColorForLabel: list[index - 1].backgroundColorForLabel,
-            );
-        }
-      },
-    );
-          */
-          return Container(
-            color: Colors.red,
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: list.length + 1,
+                  padding: const EdgeInsets.only(top: AppDimensions.largeSize),
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (BuildContext context, int index) {
+                    if (index < list.length) {
+                      return Container(
+                        height: AppDimensions.toolBarHeight,
+                        color: Colors.white,
+                        alignment: Alignment.center,
+                        child: ListTile(
+                          title: Text(list[index].fullName),
+                          subtitle: Text(list[index].phoneNumber),
+                          trailing: Image.asset(
+                            AppIcons.rightArrow,
+                            width: AppDimensions.imageSmallSize,
+                          ),
+                          onTap: () {
+                            context.push(
+                              EmergencyAddContactPage(
+                                updateContact: list[index],
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    } else {
+                      return _buildBottomList();
+                    }
+                  },
+                ),
+              ),
+              _buildBottomButton(context),
+            ],
           );
         }
       },
+    );
+  }
+
+  Widget _buildBottomList() {
+    return Container(
+      padding: EdgeInsets.all(AppDimensions.mediumSize),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Grab will send an alert containing your contact details and live location in the event of an emergency.",
+          ),
+          AppDimensions.mediumHeightSpace,
+          InkWell(
+            child: Text(
+              "Learn more about Emergency Contacts",
+              style: AppTextStyles.bigBoldFont.copyWith(
+                color: AppColors.lighterBlue,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -108,7 +143,11 @@ class _EmergencyContactPageState extends State<EmergencyContactPage> {
               MediaQuery.of(context).size.width - AppDimensions.mediumSize * 2,
           height: AppDimensions.customButtonHeight,
           borderRadius: AppDimensions.smallBorder,
-          onTap: () => {context.push(EmergencyAddContactPage())},
+          onTap: () => {
+            context.push(
+              EmergencyAddContactPage(),
+            ),
+          },
         ),
       ),
     );

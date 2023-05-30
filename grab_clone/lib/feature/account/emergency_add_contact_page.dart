@@ -1,15 +1,23 @@
-import 'package:country_code_picker/country_code_picker.dart';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:grab_clone/constant/colors.dart';
-import 'package:grab_clone/constant/dimensions.dart';
 import 'package:grab_clone/constant/icon.dart';
 import 'package:grab_clone/constant/text.dart';
-import 'package:grab_clone/extension/build_context_extension.dart';
+import 'package:grab_clone/constant/colors.dart';
+import 'package:grab_clone/constant/dimensions.dart';
+import 'package:grab_clone/database/database.dart';
+import 'package:grab_clone/model/contact_model.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:grab_clone/feature/widgets/primary_button.dart';
-import 'dart:math' as math;
+import 'package:grab_clone/extension/build_context_extension.dart';
+// import 'package:grab_clone/feature/account/emergency_add_contact_bloc.dart';
 
 class EmergencyAddContactPage extends StatefulWidget {
-  const EmergencyAddContactPage({super.key});
+  final ContactModel? updateContact;
+
+  const EmergencyAddContactPage({
+    super.key,
+    this.updateContact,
+  });
 
   @override
   State<EmergencyAddContactPage> createState() =>
@@ -17,6 +25,11 @@ class EmergencyAddContactPage extends StatefulWidget {
 }
 
 class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
+  // final _bloc = EmergencyAddContactBloc();
+  final _nameTFController = TextEditingController();
+  final _phoneNumberTFController = TextEditingController();
+  var _countryCode = CountryCode(dialCode: '+84');
+
   Widget _buildBody(BuildContext context) {
     return Container(
       color: AppColors.background,
@@ -66,6 +79,10 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
   }
 
   Widget _buildInfo() {
+    if (widget.updateContact != null) {
+      _nameTFController.text = widget.updateContact!.fullName;
+      _phoneNumberTFController.text = widget.updateContact!.phoneNumber;
+    }
     return Container(
       color: Colors.white,
       padding: EdgeInsets.all(AppDimensions.mediumSize),
@@ -73,6 +90,7 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(
+            controller: _nameTFController,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Name of contact person',
@@ -95,8 +113,7 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
                       initialSelection: 'Việt Nam',
                       favorite: ['Việt Nam'],
                       onChanged: (value) {
-                        print(value.dialCode);
-                        print(value.name);
+                        _countryCode = value;
                       },
                     ),
                     Transform.rotate(
@@ -113,6 +130,7 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
               AppDimensions.mediumWidthSpace,
               Expanded(
                 child: TextField(
+                  controller: _phoneNumberTFController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Mobile number',
@@ -124,6 +142,14 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
         ],
       ),
     );
+  }
+
+  void _addNewContact(ContactModel newContact) {
+    if (widget.updateContact == null) {
+      DBProvider.db.newContact(newContact);
+    } else {
+      DBProvider.db.updateContact(newContact);
+    }
   }
 
   Widget _buildBottomButton(BuildContext context) {
@@ -139,7 +165,15 @@ class _EmergencyAddContactPageState extends State<EmergencyAddContactPage> {
               MediaQuery.of(context).size.width - AppDimensions.mediumSize * 2,
           height: AppDimensions.customButtonHeight,
           borderRadius: AppDimensions.smallBorder,
-          onTap: () => {},
+          onTap: () {
+            var contact = ContactModel(
+              id: 0,
+              fullName: _nameTFController.text,
+              phoneNumber:
+                  '${_countryCode.dialCode} ${_phoneNumberTFController.text}',
+            );
+            _addNewContact(contact);
+          },
         ),
       ),
     );
