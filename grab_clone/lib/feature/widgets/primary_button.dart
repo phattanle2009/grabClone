@@ -8,6 +8,7 @@ class PrimaryButtonWidget extends StatelessWidget {
   final double height;
   final double borderRadius;
   final Function onTap;
+  final bool? enable;
 
   PrimaryButtonWidget({
     required this.title,
@@ -15,14 +16,15 @@ class PrimaryButtonWidget extends StatelessWidget {
     required this.height,
     required this.borderRadius,
     required this.onTap,
+    this.enable = true,
   });
 
   Widget _buildButton() {
     return InkWell(
-      onTap: () => onTap(),
+      onTap: () => enable! ? onTap() : null,
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.green,
+          color: enable! ? AppColors.green : AppColors.lightGray,
           borderRadius: BorderRadius.all(
             Radius.circular(borderRadius),
           ),

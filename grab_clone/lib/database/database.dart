@@ -31,7 +31,7 @@ class DBProvider {
     });
   }
 
-  newContact(ContactModel newContact) async {
+  Future newContact(ContactModel newContact) async {
     final db = await database;
     var table = await db.rawQuery('SELECT MAX(id)+1 as id FROM Contact');
     var id = table.first['id'] ?? 1;
@@ -43,10 +43,10 @@ class DBProvider {
     return raw;
   }
 
-  updateContact(ContactModel newContact) async {
+  Future updateContact(int id, ContactModel contact) async {
     final db = await database;
-    var res = await db.update('Contact', newContact.toMap(),
-        where: 'id = ?', whereArgs: [newContact.id]);
+    var res = await db
+        .update('Contact', contact.toMap(), where: 'id = $id');
     return res;
   }
 

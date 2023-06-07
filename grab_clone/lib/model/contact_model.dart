@@ -12,15 +12,15 @@ class ContactModel {
   });
 
   factory ContactModel.fromMap(Map<String, dynamic> json) => new ContactModel(
-        id: json["id"],
-        fullName: json["full_name"],
-        phoneNumber: json["phone_number"],
+        id: json['id'],
+        fullName: json['full_name'],
+        phoneNumber: json['phone_number'],
       );
 
-  Map<String, dynamic> toMap() => {
-        "id": id,
-        "full_name": fullName,
-        "phone_number": phoneNumber,
+  Map<String, Object> toMap() => {
+        'id': id,
+        'full_name': fullName,
+        'phone_number': phoneNumber,
       };
 }
 

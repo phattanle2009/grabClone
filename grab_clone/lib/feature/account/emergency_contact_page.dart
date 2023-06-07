@@ -20,6 +20,12 @@ class _EmergencyContactPageState extends State<EmergencyContactPage> {
   final _bloc = EmergencyContactBloc();
 
   @override
+  void didChangeDependencies() {
+    _bloc.fetchContactData();
+    super.didChangeDependencies();
+  }
+
+  @override
   void dispose() {
     _bloc.dispose();
     super.dispose();
@@ -54,11 +60,17 @@ class _EmergencyContactPageState extends State<EmergencyContactPage> {
                             width: AppDimensions.imageSmallSize,
                           ),
                           onTap: () {
-                            context.push(
-                              EmergencyAddContactPage(
-                                updateContact: list[index],
-                              ),
-                            );
+                            context
+                                .push(
+                                  EmergencyAddContactPage(
+                                    updateContact: list[index],
+                                  ),
+                                )
+                                .then(
+                                  (value) => {
+                                    if (value) didChangeDependencies(),
+                                  },
+                                );
                           },
                         ),
                       );

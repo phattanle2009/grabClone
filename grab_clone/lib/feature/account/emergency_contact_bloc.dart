@@ -9,7 +9,7 @@ class EmergencyContactBloc extends Bloc {
 
   EmergencyContactBloc() {
     bindingController();
-    _fetchContactData();
+    fetchContactData();
   }
   @override
   void bindingController() {
@@ -21,7 +21,7 @@ class EmergencyContactBloc extends Bloc {
     _controller.close();
   }
 
-  void _fetchContactData() {
+  void fetchContactData() {
     getAllContacts().then((value) => _controller.notifyValue(value));
   }
 }
