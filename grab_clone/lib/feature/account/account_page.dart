@@ -9,6 +9,7 @@ import 'package:grab_clone/feature/account/account_setting_page.dart';
 import 'package:grab_clone/feature/account/item/profile_section_header.dart';
 import 'package:grab_clone/feature/account/schedule_bottom_modal.dart';
 import 'package:grab_clone/feature/account/subscription_page.dart';
+import 'package:grab_clone/feature/account/support_page.dart';
 import 'package:grab_clone/feature/home/view/favourite/favourite_page.dart';
 
 enum MenuType {
@@ -89,6 +90,9 @@ class _AccountPageState extends State<AccountPage> {
         break;
       case MenuType.setting:
         context.push(AccountSettingPage());
+        break;
+      case MenuType.supportEnv:
+        context.push(SupportPage());
         break;
       default:
         print(type);
