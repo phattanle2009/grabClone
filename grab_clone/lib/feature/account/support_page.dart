@@ -12,26 +12,6 @@ class SupportPage extends StatefulWidget {
 }
 
 class _SupportPageState extends State<SupportPage> {
-  Widget _test() {
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(right: 50, top: 4),
-              width: double.maxFinite,
-              height: 200,
-              child: CustomPaint(
-                painter: MyPainter(),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _buildBody() {
     return SafeArea(
       child: SingleChildScrollView(

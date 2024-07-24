@@ -7,7 +7,7 @@ class OrderNowSection extends StatelessWidget {
   Widget _buildingSection(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: MediaQuery.of(context).size.width * 0.7 + 16,
+      height: MediaQuery.of(context).size.width * 0.8 + 16,
       padding: const EdgeInsets.symmetric(
         vertical: AppDimensions.smallerPadding,
       ),
